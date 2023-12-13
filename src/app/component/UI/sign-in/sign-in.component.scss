@@ -1,0 +1,47 @@
+.normal-position {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+  max-height: 100%;
+}
+
+.max-card {
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 25px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.email-input {
+  margin-top: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.aLink {
+  cursor: pointer;
+  margin-top: -10px;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.headerName {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.sign-up {
+  cursor: pointer;
+  color: #c2185b;
+ }
+
+.btn {
+  justify-content: center;
+  width: 100%;
+}

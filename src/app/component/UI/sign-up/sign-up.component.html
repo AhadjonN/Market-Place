@@ -1,0 +1,45 @@
+<div class="normal-position">
+  <mat-card class="max-card">
+    <mat-card-content>
+      <h2 style="text-align: center">Creat New Account</h2>
+      <span>User Name</span>
+      <mat-form-field class="full-width" apperance="outline">
+        <mat-label>Enter your User Name</mat-label>
+        <input matInput
+               [formControl]="name" required>
+      </mat-form-field>
+      <div class="email-input">
+        <span>Email</span>
+        <mat-form-field class="full-width" apperance="outline">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="pat@example.com"
+                 [formControl]="email" required>
+        </mat-form-field>
+      </div>
+      <span>Password</span>
+      <mat-form-field class="full-width" apperance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input matInput
+               [type]="hide ? 'password' : 'text'"
+               [formControl]="password" required>
+        <button mat-icon-button matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-checkbox color="primary"
+                    (click)="radioButton()">
+        I agree with Privacy Policy
+      </mat-checkbox>
+      <button class="btn" mat-flat-button color="primary"
+              [disabled]="!email.valid||!password.valid||!name.valid || radio==false"
+      >Sign Up
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+

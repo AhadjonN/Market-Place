@@ -1,0 +1,53 @@
+<div class="normal-position">
+  <mat-card class="max-card">
+    <mat-card-content>
+      <h2 style="text-align: center">Sign In</h2>
+      <div class="email-input">
+        <span>Email</span>
+        <mat-form-field class="full-width" apperance="outline">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="pat@example.com"
+                 [formControl]="email" required>
+        </mat-form-field>
+      </div>
+      <span>Password</span>
+      <mat-form-field class="full-width" apperance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input matInput
+               [type]="hide ? 'password' : 'text'"
+               [formControl]="password" required>
+        <button mat-icon-button matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <span class="aLink">Forgot Password</span>
+      <button class="btn" mat-flat-button color="primary"
+              [disabled]="!email.valid || !password.valid"
+      >Sign In
+      </button>
+      <div class="headerName">
+        <h2>Don`t have account?
+          <span class="sign-up"
+                (click)="routerNavigate()">Sign-up</span>
+        </h2>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

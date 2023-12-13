@@ -1,0 +1,22 @@
+.header {
+  box-shadow: -1px 7px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px rgba(0, 0, 0, 0.1411764706), 0 1px 18px rgba(0, 0, 0, 0.1215686275);
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+.mat-sidenav-container {
+  height: calc(2500px - 1665px);
+}
+
+mat-sidenav {
+  width: 200px;
+  background-color: #eee;
+  color: black;
+}
+
+.mat-drawer-container {
+  background-color: white;
+}

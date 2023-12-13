@@ -1,0 +1,19 @@
+<mat-toolbar class="header" color="primary">
+  <div class="toolbar no-select">
+    <span routerLink=" " style="cursor: pointer">Market place</span>
+  </div>
+  <span class="example-spacer"></span>
+
+  <div class="toolbar no-select" *ngIf="isSignInPage()">
+     <button mat-raised-button routerLink="sign-in">Sign-In</button>
+  </div>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened" mode="over">
+    <a>Home</a>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    End
+    <button mat-button color="primary" (click)="opened=!opened">Toggle</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
