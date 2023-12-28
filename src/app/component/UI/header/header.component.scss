@@ -1,22 +1,25 @@
-.header {
-  box-shadow: -1px 7px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px rgba(0, 0, 0, 0.1411764706), 0 1px 18px rgba(0, 0, 0, 0.1215686275);
-}
-
 .example-spacer {
   flex: 1 1 auto;
 }
 
+.toolbar {
+  display: flex;
+  align-items: center;
 
-.mat-sidenav-container {
-  height: calc(2500px - 1665px);
-}
+  &.button {
+    margin-left: 5px;
 
-mat-sidenav {
-  width: 200px;
-  background-color: #eee;
-  color: black;
+    &:first-child {
+      margin-left: 0
+    }
+  }
 }
-
-.mat-drawer-container {
-  background-color: white;
-}
+//
+//.icons {
+//  font-size: 11px;
+//  line-height: 20px;
+//  text-decoration: none;
+//  display: flex;
+//  cursor: pointer;
+//  flex-direction: column;
+//}

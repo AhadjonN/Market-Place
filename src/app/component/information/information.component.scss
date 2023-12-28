@@ -1,0 +1,52 @@
+mat-sidenav {
+  margin: 16px;
+  width: 200px;
+  border-right: none;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+
+}
+
+.card_title {
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.container_content {
+  min-height: calc(100vh - 160px);
+  margin: 16px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: flex-start;
+}
+
+.example-card {
+  margin: 5px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+  max-width: 190px;
+}
+
+.example-card:hover {
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+}
+
+.mdc-card__media:first-child {
+  margin: 5px;
+}
+
+@media(max-width: 500px) {
+  .content {
+    display: grid;
+    justify-content: center;
+  }
+}

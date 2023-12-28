@@ -1,0 +1,40 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "title": "Iphone 15",
+      "year": 2023,
+      "price": "1500$",
+      "image": "assets/download.jpg",
+      "configure": {
+        "chip": "Ios 13",
+        "memory": "500gb",
+        "display": "Retina"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Iphone 15 pro",
+      "year": 2023,
+      "price": "4500$",
+      "image": "assets/download.jpg",
+      "configure": {
+        "chip": "Ios 14",
+        "memory": "800gb",
+        "display": "Retina"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Iphone 15 pro max",
+      "year": 2023,
+      "price": "5500$",
+      "image": "assets/download.jpg",
+      "configure": {
+        "chip": "Ios 16",
+        "memory": "1tb",
+        "display": "OLED"
+      }
+    }
+  ]
+}

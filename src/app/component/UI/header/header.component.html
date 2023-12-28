@@ -1,19 +1,26 @@
-<mat-toolbar class="header" color="primary">
+<mat-toolbar color="primary">
   <div class="toolbar no-select">
+    <button mat-icon-button
+            [disabled]="this.router.url !== '/'"
+            (click)="ProductService.toggleOpened();">
+
+      <mat-icon *ngIf="!this.ProductService.opened">menu</mat-icon>
+      <mat-icon *ngIf="this.ProductService.opened">close</mat-icon>
+    </button>
     <span routerLink=" " style="cursor: pointer">Market place</span>
   </div>
   <span class="example-spacer"></span>
 
+  <mat-icon>garden_cart
+  </mat-icon>
+
+
   <div class="toolbar no-select" *ngIf="isSignInPage()">
-     <button mat-raised-button routerLink="sign-in">Sign-In</button>
+    <button style="margin-right: 5px" mat-raised-button routerLink="basket"
+            [disabled]="this.ProductService.opened">Basket
+    </button>
+    <button mat-raised-button routerLink="sign-in"
+            [disabled]="this.ProductService.opened">Sign-In
+    </button>
   </div>
 </mat-toolbar>
-<mat-sidenav-container>
-  <mat-sidenav [(opened)]="opened" mode="over">
-    <a>Home</a>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    End
-    <button mat-button color="primary" (click)="opened=!opened">Toggle</button>
-  </mat-sidenav-content>
-</mat-sidenav-container>

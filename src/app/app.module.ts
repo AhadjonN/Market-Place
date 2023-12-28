@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
+import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -18,6 +19,10 @@ import {FooterComponent} from './component/UI/footer/footer.component';
 import {BaseComponent} from './component/base/base.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {BasketComponent} from './component/basket/basket.component';
+import {InformationComponent} from './component/information/information.component';
+import {DialogBoxComponent} from './component/dialog-box/dialog-box.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -29,7 +34,10 @@ import {MatListModule} from '@angular/material/list';
     HeaderComponent,
     FooterComponent,
     BaseComponent,
-   ],
+    BasketComponent,
+    InformationComponent,
+    DialogBoxComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -43,6 +51,8 @@ import {MatListModule} from '@angular/material/list';
     MatCheckboxModule,
     MatSidenavModule,
     MatListModule,
+    HttpClientModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
