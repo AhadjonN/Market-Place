@@ -5,34 +5,45 @@ mat-sidenav {
   border-radius: 10px;
   padding: 10px;
   text-align: center;
-
 }
 
 .example-spacer {
   flex: 1 1 auto;
 }
 
-.card_title {
-  display: flex;
-  justify-content: center;
-  font-size: 15px;
-}
-
-
+//container
 .container_content {
   min-height: calc(100vh - 160px);
   margin: 16px;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-
 }
 
 .content {
+  max-width: 1600px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-  justify-content: flex-start;
+}
+
+.header__container {
+  margin: 0 auto;
+  display: flex;
+  width: 1600px;
+}
+
+@media(max-width: 500px) {
+  .content {
+    display: grid;
+    justify-content: center;
+  }
+}
+
+// card
+.card_title {
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
 }
 
 .example-card {
@@ -50,9 +61,19 @@ mat-sidenav {
   margin: 5px;
 }
 
-@media(max-width: 500px) {
-  .content {
-    display: grid;
-    justify-content: center;
-  }
+//search
+.example-full-width {
+  width: 800px;
+}
+
+.example-form {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.example-form mat-icon {
+  position: absolute;
+  top: 15px;
+  right: 10px;
 }

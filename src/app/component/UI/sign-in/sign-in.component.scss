@@ -1,9 +1,8 @@
 .normal-position {
   display: flex;
+  height: 80vh;
   align-items: center;
   justify-content: center;
-  margin-top: 200px;
-  max-height: 100%;
 }
 
 .max-card {
@@ -38,7 +37,7 @@
 .sign-up {
   cursor: pointer;
   color: #3f51b5;
- }
+}
 
 .btn {
   justify-content: center;

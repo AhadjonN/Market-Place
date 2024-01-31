@@ -7,7 +7,7 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {SignInComponent} from './component/UI/sign-in/sign-in.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
@@ -23,6 +23,7 @@ import {BasketComponent} from './component/basket/basket.component';
 import {InformationComponent} from './component/information/information.component';
 import {DialogBoxComponent} from './component/dialog-box/dialog-box.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -53,6 +54,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatListModule,
     HttpClientModule,
     MatDialogModule,
+    FormsModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

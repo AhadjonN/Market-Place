@@ -3,12 +3,14 @@ export interface IProducts {
   title: string,
   year: number,
   price: number,
+  totalPrice: number,
   image?: string,
-  configure: IProductsConfig
+  quantity: number,
+  configure: IProductsConfig,
 }
 
 export interface IProductsConfig {
   chip: string,
-  memory: string;
+  memory: string,
   display: string
 }

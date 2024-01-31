@@ -16,4 +16,14 @@ export class SignUpComponent {
   radioButton() {
     this.radio = !this.radio;
   }
+
+  signUp() {
+    if (this.email.valid && this.password.valid && this.name.valid && this.radio) {
+      const userData = {
+        name: this.name.value,
+        password: this.password.value,
+        email: this.email.value,
+      };
+    }
+  }
 }

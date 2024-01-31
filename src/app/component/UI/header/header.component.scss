@@ -14,6 +14,17 @@
     }
   }
 }
+
+.example-full-width {
+  width: 100%;
+}
+
+.header__container {
+  margin: 0 auto;
+  display: flex;
+  width: 1600px;
+}
+
 //
 //.icons {
 //  font-size: 11px;
