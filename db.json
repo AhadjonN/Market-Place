@@ -1,84 +1,21 @@
 {
   "product": [
     {
-      "id": 3,
-      "title": "anti",
-      "year": "2023",
-      "price": "2",
-      "image": "assets/mac.jpg",
+      "id": 1,
+      "title": "macboock",
+      "year": 2023,
+      "price": 200,
+      "totalPrice": 200,
+      "image":"assets/mac.jpg",
+      "quantity": 10,
       "configure": {
         "chip": "m2",
         "memory": "500gb",
-        "display": "flex"
+        "display": "Oled"
       }
-    },
-    {
-      "id": 4,
-      "title": "3563",
-      "year": "6345",
-      "price": "345",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "3634536",
-        "memory": "",
-        "display": ""
-      }
-    },
-    {
-      "id": 7,
-      "title": "qwertyu",
-      "year": "2924",
-      "price": "2",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "",
-        "memory": "",
-        "display": ""
-      }
+
     }
   ],
   "basket": [
-    {
-      "id": 3,
-      "title": "anti",
-      "year": "2023",
-      "price": "2",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "m2",
-        "memory": "500gb",
-        "display": "flex"
-      },
-      "quantity": 15,
-      "totalPrice": 30
-    },
-    {
-      "id": 4,
-      "title": "3563",
-      "year": "6345",
-      "price": "345",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "3634536",
-        "memory": "",
-        "display": ""
-      },
-      "quantity": 2,
-      "totalPrice": 690
-    },
-    {
-      "id": 7,
-      "title": "qwertyu",
-      "year": "2924",
-      "price": "2",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "",
-        "memory": "",
-        "display": ""
-      },
-      "quantity": 2,
-      "totalPrice": 4
-    }
   ]
 }
