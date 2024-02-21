@@ -13,6 +13,7 @@ import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 })
 export class BaseComponent implements OnInit {
 
+
   constructor(public ProductService: ProductsService,
               public dialog: MatDialog,
   ) {
@@ -25,6 +26,7 @@ export class BaseComponent implements OnInit {
   basketSubscription: Subscription;
 
   canEdit: boolean = false;
+  search: string = '';
 
   ngOnInit() {
     this.canEdit = true;
@@ -78,6 +80,7 @@ export class BaseComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe((data) => {
+
       if (data) {
         if (data && data.id) {
           this.editItem(data);
@@ -109,6 +112,17 @@ export class BaseComponent implements OnInit {
         else return product;
       });
     });
+  }
+
+
+  searchProducts() {
+    if (this.search.trim() === '') {
+      this.getProducts();
+      return;
+    }
+    this.products = this.products.filter(product =>
+      product.title.toLowerCase().includes(this.search.toLowerCase())
+    );
   }
 
   getProducts() {

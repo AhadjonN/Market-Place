@@ -37,9 +37,9 @@
   <div class="mini__content">
     <div class="border_content">
       <mat-card class="mini__example-card">
-        <mat-card-content *ngFor="let item of basket">
-          <p>Quantity: {{ item.allTotalQuantity }}</p>
-          <p>Price: {{ item.allTotalPrice|currency }}</p>
+        <mat-card-content>
+          <p>Quantity: {{ allTotalQuantity }}</p>
+          <p>Price: {{ allTotalPrice|currency }}</p>
         </mat-card-content>
         <mat-card-actions style="margin-top: 10px">
           <button mat-raised-button color="primary">Order</button>

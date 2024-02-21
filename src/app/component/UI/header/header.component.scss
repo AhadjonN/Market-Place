@@ -19,32 +19,18 @@
   width: 100%;
 }
 
-mat-toolbar-row {
-  padding: 0;
-}
-
 .header__container {
   margin: 0 auto;
   display: flex;
   width: 1600px;
-  flex-wrap: wrap;
-  align-content: flex-end;
-  flex-direction: column;
 }
 
-//search
-.example-full-width-search {
-  width: 800px;
-}
-
-.example-form {
-  display: flex;
-  justify-content: center;
-  align-items: center
-}
-
-.example-form mat-icon {
-  position: absolute;
-  top: 15px;
-  right: 10px;
-}
+//
+//.icons {
+//  font-size: 11px;
+//  line-height: 20px;
+//  text-decoration: none;
+//  display: flex;
+//  cursor: pointer;
+//  flex-direction: column;
+//}

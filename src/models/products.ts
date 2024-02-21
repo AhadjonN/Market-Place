@@ -4,8 +4,6 @@ export interface IProducts {
   year: number,
   price: number,
   totalPrice: number,
-  allTotalPrice: number,
-  allTotalQuantity: number,
   image?: string,
   quantity: number,
   configure: IProductsConfig,

@@ -9,28 +9,15 @@
         <mat-icon *ngIf="this.ProductService.opened">close</mat-icon>
       </button>
       <span routerLink=" " style="cursor: pointer">Market place</span>
-      <span class="example-spacer"></span>
-      <div *ngIf="isSignInPage()">
-        <button style="margin-right: 5px" mat-raised-button routerLink="basket"
-                [disabled]="this.ProductService.opened">Basket
-        </button>
-        <button mat-raised-button routerLink="sign-in"
-                [disabled]="this.ProductService.opened">Sign-In
-        </button>
-      </div>
     </div>
-
-    <div class="example-form">
-      <mat-form-field class="example-full-width-search">
-        <mat-label>Search</mat-label>
-        <input type="text" matInput [(ngModel)]="search" (input)="searchProducts()">
-        <mat-icon color="primary">search</mat-icon>
-      </mat-form-field>
-    </div>
-    <mat-toolbar-row>
-      <span class="example-spacer"></span>
-      <button mat-raised-button (click)="openDialog()">Add to Market
+    <span class="example-spacer"></span>
+    <div class="toolbar no-select" *ngIf="isSignInPage()">
+      <button style="margin-right: 5px" mat-raised-button routerLink="basket"
+              [disabled]="this.ProductService.opened">Basket
       </button>
-    </mat-toolbar-row>
+      <button mat-raised-button routerLink="sign-in"
+              [disabled]="this.ProductService.opened">Sign-In
+      </button>
+    </div>
   </div>
 </mat-toolbar>

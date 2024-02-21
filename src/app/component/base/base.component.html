@@ -1,19 +1,19 @@
-<!--<mat-toolbar color="primary" *ngIf="canEdit">-->
-<!--  <mat-toolbar-row>-->
-<!--    <div class="header__container">-->
-<!--      <span class="example-spacer"></span>-->
+<mat-toolbar color="primary" *ngIf="canEdit">
+  <mat-toolbar-row>
+    <div class="header__container">
+      <span class="example-spacer"></span>
       <button mat-raised-button (click)="openDialog()">Add to Market
       </button>
-<!--    </div>-->
-<!--  </mat-toolbar-row>-->
-<!--  <div class="example-form">-->
-<!--    <mat-form-field class="example-full-width">-->
-<!--      <mat-label>Search</mat-label>-->
-<!--      <input type="text" matInput [(ngModel)]="search" (input)="searchProducts()">-->
-<!--      <mat-icon color="primary">search</mat-icon>-->
-<!--    </mat-form-field>-->
-<!--  </div>-->
-<!--</mat-toolbar>-->
+    </div>
+  </mat-toolbar-row>
+  <div class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Search</mat-label>
+      <input type="text" matInput [(ngModel)]="search" (input)="searchProducts()">
+      <mat-icon color="primary">search</mat-icon>
+    </mat-form-field>
+  </div>
+</mat-toolbar>
 <mat-sidenav-container hasBackdrop>
   <mat-sidenav [opened]="ProductService.opened" mode="over" disableClose opened>
     <p>Cool</p>

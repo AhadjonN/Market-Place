@@ -18,6 +18,9 @@ export class BasketComponent implements OnInit {
 
   emptyBasket = true;
 
+  allTotalPrice: number;
+  allTotalQuantity: number;
+
   ngOnInit(): void {
     this.basketSubscription = this.ProductService.getProductFromBasket().subscribe((data) => {
       this.basket = data;
@@ -49,8 +52,8 @@ export class BasketComponent implements OnInit {
 
   allTotalPriceAndQuantity(product: IProducts) {
     product.totalPrice = product.price * product.quantity;
-    product.allTotalPrice = this.basket.reduce((acc, product) => acc + product.totalPrice, 0);
-    product.allTotalQuantity = this.basket.reduce((acc, product) => acc + product.quantity, 0);
+    this.allTotalPrice = this.basket.reduce((acc, product) => acc + product.totalPrice, 0);
+    this.allTotalQuantity = this.basket.reduce((acc, product) => acc + product.quantity, 0);
   }
 
   ngOnDestroy() {
