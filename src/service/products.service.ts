@@ -6,7 +6,7 @@ import {Subscription} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService implements OnInit{
+export class ProductsService implements OnInit {
 
   opened = false;
   allTotalPrice: number;
@@ -24,7 +24,7 @@ export class ProductsService implements OnInit{
   ngOnInit(): void {
     this.basketSubscription = this.getProductFromBasket().subscribe((data) => {
       this.basket = data;
-     });
+    });
   }
 
 // base products
@@ -45,7 +45,7 @@ export class ProductsService implements OnInit{
   }
 
   updateProduct(product: IProducts) {
-    return this.http.put<any>(`${this.url}/${product.id}`, product);
+    return this.http.put<IProducts>(`${this.url}/${product.id}`, product);
   }
 
   // basket products
@@ -63,7 +63,7 @@ export class ProductsService implements OnInit{
   }
 
   updateProductToBasket(product: IProducts) {
-    return this.http.put<any>(`${this.urlBasket}/${product.id}`, product);
+    return this.http.put<IProducts>(`${this.urlBasket}/${product.id}`, product);
   }
 
 // other
@@ -71,7 +71,4 @@ export class ProductsService implements OnInit{
   toggleOpened() {
     this.opened = !this.opened;
   }
-
-
 }
-

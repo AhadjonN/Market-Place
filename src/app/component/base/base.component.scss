@@ -1,10 +1,16 @@
 mat-sidenav {
   margin: 16px;
   width: 200px;
+  min-height: 300px;
+  max-height: 83vh;
+  overflow-y: auto;
+
   border-right: none;
   border-radius: 10px;
   padding: 10px;
   text-align: center;
+  background-color: #f0f0f0;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .example-spacer {
@@ -62,18 +68,18 @@ mat-sidenav {
 }
 
 //search
-.example-full-width {
-  width: 800px;
-}
-
-.example-form {
-  display: flex;
-  justify-content: center;
-  align-items: center
-}
-
-.example-form mat-icon {
-  position: absolute;
-  top: 15px;
-  right: 10px;
-}
+//.example-full-width {
+//  width: 800px;
+//}
+//
+//.example-form {
+//  display: flex;
+//  justify-content: center;
+//  align-items: center
+//}
+//
+//.example-form mat-icon {
+//  position: absolute;
+//  top: 15px;
+//  right: 10px;
+//}

@@ -1,4 +1,4 @@
-<h2 style="text-align: center">Add To Market Place</h2>
+<h2 style="text-align: center; margin: 15px">Add To Market Place</h2>
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="example-form">
   <mat-form-field class="example-full-width">
     <mat-label>Title</mat-label>
@@ -26,9 +26,9 @@
   </mat-form-field>
   <div class="btnAdd">
     <button mat-raised-button style="margin-right: 5px" type="submit"
+            [disabled]="!myForm.valid">
 
-    >
-      {{ isNew ? 'Add' : 'Update'}}
+      {{ isNew ? 'Add' : 'Update' }}
     </button>
     <button mat-raised-button (click)="onCloseClick()" type="button">Cancel
     </button>

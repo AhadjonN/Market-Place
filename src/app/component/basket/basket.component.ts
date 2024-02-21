@@ -25,12 +25,6 @@ export class BasketComponent implements OnInit {
     });
   }
 
-  ngOnDestroy() {
-    if (this.basketSubscription) {
-      this.basketSubscription.unsubscribe();
-    }
-  }
-
   minusItem(item: IProducts) {
     if (item.quantity === 1) {
       this.ProductService.deleteProductToBasket(item.id).subscribe(() => {
@@ -53,15 +47,19 @@ export class BasketComponent implements OnInit {
     });
   }
 
+  allTotalPriceAndQuantity(product: IProducts) {
+    product.totalPrice = product.price * product.quantity;
+    product.allTotalPrice = this.basket.reduce((acc, product) => acc + product.totalPrice, 0);
+    product.allTotalQuantity = this.basket.reduce((acc, product) => acc + product.quantity, 0);
+  }
+
+  ngOnDestroy() {
+    if (this.basketSubscription) {
+      this.basketSubscription.unsubscribe();
+    }
+  }
+
   private updateEmptyBasketFlag() {
     this.emptyBasket = this.basket.length === 0;
   }
-
-  allTotalPriceAndQuantity(product: IProducts) {
-    product.totalPrice = product.price * product.quantity;
-    this.ProductService.allTotalPrice = this.basket.reduce((acc, product) => acc + product.totalPrice, 0);
-    this.ProductService.allTotalQuantity = this.basket.reduce((acc, product) => acc + product.quantity, 0);
-
-  }
-
 }

@@ -2,20 +2,64 @@
   "product": [
     {
       "id": 1,
-      "title": "macboock",
-      "year": 2023,
-      "price": 200,
-      "totalPrice": 200,
-      "image":"assets/mac.jpg",
-      "quantity": 10,
+      "title": "8",
+      "year": "68",
+      "price": "8",
+      "image": "assets/mac.jpg",
       "configure": {
-        "chip": "m2",
-        "memory": "500gb",
-        "display": "Oled"
+        "chip": "88",
+        "memory": "967",
+        "display": "8967896789"
       }
-
+    },
+    {
+      "id": 2,
+      "title": "4567",
+      "year": "4567",
+      "price": "45",
+      "image": "assets/mac.jpg",
+      "configure": {
+        "chip": "674567",
+        "memory": "5674567",
+        "display": "4567457"
+      }
+    },
+    {
+      "id": 3,
+      "title": "312312",
+      "year": "123",
+      "price": "123",
+      "image": "assets/mac.jpg",
+      "configure": {
+        "chip": "123",
+        "memory": "3123",
+        "display": "23"
+      }
+    },
+    {
+      "id": 4,
+      "title": "4563456",
+      "year": "4356",
+      "price": "3456",
+      "image": "assets/mac.jpg",
+      "configure": {
+        "chip": "563456345",
+        "memory": "456",
+        "display": "6345634"
+      }
+    },
+    {
+      "id": 5,
+      "title": "55",
+      "year": "5",
+      "price": "55",
+      "image": "assets/mac.jpg",
+      "configure": {
+        "chip": "5555",
+        "memory": "555",
+        "display": "5555"
+      }
     }
   ],
-  "basket": [
-  ]
+  "basket": []
 }

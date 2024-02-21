@@ -25,8 +25,6 @@ export class BaseComponent implements OnInit {
   basketSubscription: Subscription;
 
   canEdit: boolean = false;
-  canView: boolean = false;
-  search: string = '';
 
   ngOnInit() {
     this.canEdit = true;
@@ -80,12 +78,12 @@ export class BaseComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe((data) => {
-      if (data)
+      if (data) {
         if (data && data.id) {
           this.editItem(data);
-        } else {
+        } else
           this.postData(data);
-        }
+      }
     });
   }
 
@@ -96,12 +94,12 @@ export class BaseComponent implements OnInit {
   }
 
   deleteItem(id: number) {
-    this.ProductService.deleteProduct(id).subscribe(() => this.products.find((item => {
+    this.ProductService.deleteProduct(id).subscribe(() => this.products.find((item) => {
       if (id === item.id) {
         let idx = this.products.findIndex((data) => data.id === id);
         this.products.splice(idx, 1);
       }
-    })));
+    }));
   }
 
   editItem(product: IProducts) {
@@ -113,22 +111,10 @@ export class BaseComponent implements OnInit {
     });
   }
 
-  //search
-
   getProducts() {
     this.ProductService.getProducts().subscribe(products => {
       this.products = products;
     });
-  }
-
-  searchProducts() {
-    if (this.search.trim() === '') {
-      this.getProducts();
-      return;
-    }
-    this.products = this.products.filter(product =>
-      product.title.toLowerCase().includes(this.search.toLowerCase())
-    );
   }
 
   ngOnDestroy() {
@@ -136,4 +122,3 @@ export class BaseComponent implements OnInit {
     if (this.basketSubscription) this.basketSubscription.unsubscribe();
   }
 }
-

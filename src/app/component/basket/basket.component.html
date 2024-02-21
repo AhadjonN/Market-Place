@@ -6,27 +6,45 @@
         <img mat-card-image src="{{item.image}}" alt="ERROR">
         <mat-card-content>
           <br>
-          <mat-card-title>{{item.title}}</mat-card-title>
-          <p> Year: {{item.year}}</p>
-          <p>Price: {{item.totalPrice| currency}}</p>
+          <mat-card-title>{{ item.title }}</mat-card-title>
+          <p> Year: {{ item.year }}</p>
+          <p>Price: {{ item.totalPrice| currency }}</p>
         </mat-card-content>
         <mat-card-actions>
-          <button class="btnQuantity" mat-raised-button color="primary" (click)="minusItem(item)">-</button>
-          <span class="quantity">{{item.quantity}}</span>
-          <button class="btnQuantity" mat-raised-button color="primary" (click)="plusItem(item)">+</button>
+          <button class="btnQuantity" mat-raised-button color="primary"
+                  (click)="minusItem(item)">-
+          </button>
+          <span class="quantity">{{ item.quantity }}</span>
+          <button class="btnQuantity" mat-raised-button color="primary"
+                  (click)="plusItem(item)">+
+          </button>
         </mat-card-actions>
       </mat-card>
-      <mat-card class="example-card" *ngIf="emptyBasket">
-        <h1 style="margin: 0px 0px 26px 20px;">Empty</h1>
-      </mat-card>
+      <div class="basket_empty">
+        <mat-card class="example-card" *ngIf="emptyBasket">
+          <div class="basket-empty__wrap">
+            <h1> Your basket is still empty</h1>
+            <p>Go to the main page to select items or search for what you need</p>
+            <button mat-raised-button color="primary" routerLink=" ">
+              Main Menu
+            </button>
+          </div>
+        </mat-card>
+      </div>
     </div>
   </div>
 
-  <div class="mini__content order__content">
+  <div class="mini__content">
     <div class="border_content">
-      <p>Quantity: {{this.ProductService.allTotalQuantity}}</p>
-      <p>Price: {{this.ProductService.allTotalPrice|currency}}</p>
-      <button mat-raised-button color="primary">Order</button>
+      <mat-card class="mini__example-card">
+        <mat-card-content *ngFor="let item of basket">
+          <p>Quantity: {{ item.allTotalQuantity }}</p>
+          <p>Price: {{ item.allTotalPrice|currency }}</p>
+        </mat-card-content>
+        <mat-card-actions style="margin-top: 10px">
+          <button mat-raised-button color="primary">Order</button>
+        </mat-card-actions>
+      </mat-card>
     </div>
   </div>
 </div>
