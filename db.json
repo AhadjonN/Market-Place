@@ -1,4 +1,58 @@
 {
-  "product": [],
-  "basket": []
+  "product": [
+    {
+      "id": 1,
+      "title": "7777",
+      "year": "7",
+      "price": "77",
+      "image": "assets/mac.jpg",
+      "configure": {
+        "chip": "77",
+        "memory": "77",
+        "display": "7"
+      }
+    },
+    {
+      "id": 2,
+      "title": "765",
+      "year": "7567",
+      "price": "56756",
+      "image": "assets/mac.jpg",
+      "configure": {
+        "chip": "7567",
+        "memory": "56756",
+        "display": "7657"
+      }
+    }
+  ],
+  "basket": [
+    {
+      "id": 2,
+      "title": "765",
+      "year": "7567",
+      "price": "56756",
+      "image": "assets/mac.jpg",
+      "configure": {
+        "chip": "7567",
+        "memory": "56756",
+        "display": "7657"
+      },
+      "quantity": 11,
+      "totalPrice": 624316
+    },
+    {
+      "id": 1,
+      "title": "7777",
+      "year": "7",
+      "price": "77",
+      "image": "assets/mac.jpg",
+      "configure": {
+        "chip": "77",
+        "memory": "77",
+        "display": "7"
+      },
+      "quantity": 2,
+      "totalPrice": 154
+    }
+  ]
 }

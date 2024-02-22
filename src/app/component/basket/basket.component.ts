@@ -18,9 +18,6 @@ export class BasketComponent implements OnInit {
 
   emptyBasket = true;
 
-  allTotalPrice: number;
-  allTotalQuantity: number;
-
   ngOnInit(): void {
     this.basketSubscription = this.ProductService.getProductFromBasket().subscribe((data) => {
       this.basket = data;
@@ -37,7 +34,7 @@ export class BasketComponent implements OnInit {
       });
     } else {
       item.quantity -= 1;
-      this.allTotalPriceAndQuantity(item);
+      this.ProductService.allTotalPriceAndQuantity(item, this.basket);
       this.ProductService.updateProductToBasket(item).subscribe(() => {
       });
     }
@@ -45,16 +42,11 @@ export class BasketComponent implements OnInit {
 
   plusItem(item: IProducts) {
     item.quantity += 1;
-    this.allTotalPriceAndQuantity(item);
+    this.ProductService.allTotalPriceAndQuantity(item, this.basket);
     this.ProductService.updateProductToBasket(item).subscribe(() => {
     });
   }
 
-  allTotalPriceAndQuantity(product: IProducts) {
-    product.totalPrice = product.price * product.quantity;
-    this.allTotalPrice = this.basket.reduce((acc, product) => acc + product.totalPrice, 0);
-    this.allTotalQuantity = this.basket.reduce((acc, product) => acc + product.quantity, 0);
-  }
 
   ngOnDestroy() {
     if (this.basketSubscription) {

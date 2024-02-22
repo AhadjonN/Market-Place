@@ -13,6 +13,7 @@ import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 })
 export class BaseComponent implements OnInit {
 
+  search: string = '';
 
   constructor(public ProductService: ProductsService,
               public dialog: MatDialog,
@@ -26,7 +27,6 @@ export class BaseComponent implements OnInit {
   basketSubscription: Subscription;
 
   canEdit: boolean = false;
-  search: string = '';
 
   ngOnInit() {
     this.canEdit = true;
@@ -45,9 +45,7 @@ export class BaseComponent implements OnInit {
 
   addToBasket(product: IProducts) {
     product.quantity = 1;
-    product.totalPrice = product.price * product.quantity;
-    this.ProductService.allTotalPrice = this.basket.reduce((acc, product) => acc + product.totalPrice, 0);
-    this.ProductService.allTotalQuantity = this.basket.reduce((acc, product) => acc + product.quantity, 0);
+    this.ProductService.allTotalPriceAndQuantity(product, this.basket);
     let findItem;
     if (this.basket.length > 0) {
       findItem = this.basket.find((item) => item.id === product.id);

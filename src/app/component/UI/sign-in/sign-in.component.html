@@ -25,9 +25,13 @@
       </mat-form-field>
       <span class="aLink">Forgot Password</span>
       <button class="btn" mat-flat-button color="primary"
+              (click)="Enter()"
               [disabled]="!email.valid || !password.valid"
       >Sign In
       </button>
+      <div class="error-message" *ngIf="incorrectMail || incorrectPassword">
+        Email or password is incorrect.
+      </div>
       <div class="headerName">
         <h2>Don`t have account?
           <span class="sign-up"

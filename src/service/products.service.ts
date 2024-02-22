@@ -49,7 +49,6 @@ export class ProductsService implements OnInit {
   }
 
   // basket products
-
   getProductFromBasket() {
     return this.http.get<IProducts[]>(this.urlBasket);
   }
@@ -71,4 +70,11 @@ export class ProductsService implements OnInit {
   toggleOpened() {
     this.opened = !this.opened;
   }
+
+  allTotalPriceAndQuantity(product: IProducts, basket: IProducts[]): void {
+    product.totalPrice = product.price * product.quantity;
+    this.allTotalPrice = basket.reduce((acc, product) => acc + product.totalPrice, 0);
+    this.allTotalQuantity = basket.reduce((acc, product) => acc + product.quantity, 0);
+  }
+
 }

@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-
-// http://localhost:3000/signupUsersList
 
 @Component({
   selector: 'app-sign-up',
@@ -11,8 +9,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-  public SignUpFrom !: FormGroup;
 
+  signUpSuccess: boolean = false;
   radio = false;
   hide = true;
   email = new FormControl('', [Validators.email]);
@@ -31,22 +29,23 @@ export class SignUpComponent implements OnInit {
     this.radio = !this.radio;
   }
 
+
   signUp() {
     if (this.email.valid && this.password.valid && this.name.valid && this.radio) {
-      const userData = {
+      let user_str = localStorage.getItem('userinfo');
+      if (user_str !== null) {
+        console.log('Пользователь зарегистрирован');
+        return;
+      }
+
+      let user_obj = {
         name: this.name.value,
         password: this.password.value,
         email: this.email.value,
       };
+      let user_str_new: string = JSON.stringify(user_obj);
+      localStorage.setItem('userinfo', user_str_new);
+      this.signUpSuccess = true;
     }
-    // this.http.post<any>('http://localhost:3000/signupUsersList', this.SignUpFrom.value)
-    //   .subscribe(res => {
-    //     alert('SIGNIN SUCCESFUL');
-    //     this.SignUpFrom.reset();
-    //     this.router.navigate(['login']).then(r => {
-    //     });
-    //   }, err => {
-    //     alert('Something went wrong');
-    //   });
   }
 }
