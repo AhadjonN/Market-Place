@@ -1,23 +1,21 @@
 <mat-toolbar color="primary">
   <div class="header__container">
     <div class="toolbar no-select">
-      <button mat-icon-button
-              [disabled]="this.router.url !== '/'"
-              (click)="ProductService.toggleOpened();">
-
-        <mat-icon *ngIf="!this.ProductService.opened">menu</mat-icon>
-        <mat-icon *ngIf="this.ProductService.opened">close</mat-icon>
+      <button mat-icon-button (click)="ProductService.toggleOpened()" *ngIf="router.url==='/'">
+        <mat-icon>{{ ProductService.opened ? 'close' : 'menu' }}</mat-icon>
       </button>
-      <span routerLink=" " style="cursor: pointer">Market place</span>
+      <b routerLink="base" style="cursor: pointer; font-size: 22px">Market Place</b>
     </div>
     <span class="example-spacer"></span>
     <div class="toolbar no-select" *ngIf="isSignInPage()">
-      <button style="margin-right: 5px" mat-raised-button routerLink="basket"
-              [disabled]="this.ProductService.opened">Basket
-      </button>
-      <button mat-raised-button routerLink="sign-in"
-              [disabled]="this.ProductService.opened">Sign-In
-      </button>
+      <div class="iconBase" routerLink="basket">
+        <span style="font-size: 27px;" class="material-symbols-outlined">shopping_cart</span>
+        <h4>Basket</h4>
+      </div>
+      <div class="iconBase" routerLink="sign-in">
+        <span style="font-size: 27px" class="material-symbols-outlined" >logout</span>
+        <h4>Login</h4>
+      </div>
     </div>
   </div>
 </mat-toolbar>

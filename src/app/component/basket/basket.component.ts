@@ -47,6 +47,9 @@ export class BasketComponent implements OnInit {
     });
   }
 
+  Order() {
+    alert("your order was successfully placed")
+  }
 
   ngOnDestroy() {
     if (this.basketSubscription) {

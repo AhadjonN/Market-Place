@@ -25,7 +25,6 @@ import {DialogBoxComponent} from './component/dialog-box/dialog-box.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
 
-
 @NgModule({
 
   declarations: [

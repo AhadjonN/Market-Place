@@ -12,12 +12,11 @@ export class SignInComponent {
 
   constructor(private router: Router) {
   }
-  incorrectMail: boolean = false;
-  incorrectPassword: boolean = false;
+
+  incorrect: boolean = false;
   hide = true;
   email = new FormControl('', [Validators.email]);
   password = new FormControl('', [Validators.required]);
-
 
   routerNavigate() {
     this.router.navigate(['sign-up']);
@@ -26,27 +25,17 @@ export class SignInComponent {
   Enter(): void {
     let user_str = localStorage.getItem('userinfo');
     if (user_str === null) {
-      console.log('Данные пользователя не найдены');
+      alert('User data not found!');
       return;
     }
 
     let user = JSON.parse(user_str);
-    if (this.email.value === user['email']) {
-      console.log('Email верифицирован');
-    } else {
-      this.incorrectMail = true;
-      console.log('Email не верифицирован');
+    if (this.email.value === user['email'] && this.password.value === user['password']) {
+      this.router.navigate(['base']);
+      alert('You are logged in!');
       return;
-    }
-    if (this.password.value === user['password']) {
-      console.log('Пароль верифицирован');
     } else {
-      this.incorrectPassword = true;
-      console.log('Пароль не верифицирован');
-      return;
+      this.incorrect = true;
     }
-    alert('Вы успешно вошли');
   }
 }
-
-

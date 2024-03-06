@@ -20,7 +20,7 @@
                 (click)="hide = !hide"
                 [attr.aria-label]="'Hide password'"
                 [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
       </mat-form-field>
       <span class="aLink">Forgot Password</span>
@@ -29,11 +29,11 @@
               [disabled]="!email.valid || !password.valid"
       >Sign In
       </button>
-      <div class="error-message" *ngIf="incorrectMail || incorrectPassword">
+      <p style="color: red" *ngIf="incorrect">
         Email or password is incorrect.
-      </div>
+      </p>
       <div class="headerName">
-        <h2>Don`t have account?
+        <h2 style="font-size: 20px">Don`t have account?
           <span class="sign-up"
                 (click)="routerNavigate()">Sign-up</span>
         </h2>

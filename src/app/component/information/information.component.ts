@@ -36,9 +36,7 @@ export class InformationComponent implements OnInit {
     product.quantity = 1;
     let findItem;
     if (this.basket.length > 0) {
-      findItem = this.basket.find((item) => item.id === product.id
-      );
-
+      findItem = this.basket.find((item) => item.id === product.id);
       if (findItem) this.updateToBasket(findItem);
       else this.postToBasket(product);
     } else this.postToBasket(product);

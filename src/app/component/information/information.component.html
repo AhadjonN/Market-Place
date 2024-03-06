@@ -5,22 +5,55 @@
 
         <mat-card-header>
           <mat-card-title-group>
-            <img mat-card-xl-image src=" {{product.image}}" alt="ERROR">
-            <mat-card-title>{{product.title}}</mat-card-title>
+            <div class="group-info">
+              <div class="header-infor">
+                <mat-card-title>{{ product.title }}</mat-card-title>
+              </div>
+              <div class="linear"></div>
+              <div class="header-info">
+                <img mat-card-xl-image src=" {{product.image}}" alt="ERROR">
+                <div class="product-info">
+                  <div class="info-item">
+                    <div class="info-label">Year:</div>
+                    <div class="info-value">{{ product.year }}</div>
+                  </div>
+                  <div class="info-item">
+                    <div class="info-label">Chip:</div>
+                    <div class="info-value">{{ product.configure.chip }}</div>
+                  </div>
+                  <div class="info-item">
+                    <div class="info-label">Memory:</div>
+                    <div class="info-value">{{ product.configure.memory }}</div>
+                  </div>
+                  <div class="info-item">
+                    <div class="info-label">Display:</div>
+                    <div class="info-value">{{ product.configure.display }}</div>
+                  </div>
+                </div>
+
+                <div class="mini__content">
+
+                  <mat-card class="mini__example-card">
+                    <mat-card-content>
+                      <div class="info-item">
+                        <div class="mini-container-value">
+                          <div class="info-label">Price:</div>
+                          <div class="info-value">{{ product.price | currency }}</div>
+                        </div>
+                      </div>
+                    </mat-card-content>
+                    <mat-card-actions style="margin-top: 10px">
+                      <button mat-button mat-raised-button color="primary" (click)="addToBasket(product)">BUY</button>
+                    </mat-card-actions>
+                  </mat-card>
+                </div>
+
+              </div>
+            </div>
           </mat-card-title-group>
         </mat-card-header>
-        <mat-card-content>
-          <br>
-          <p>Year: {{product.year}}</p>
-          <p>Price: {{product.price | currency}}</p>
-          <p>Chip: {{product.configure.chip}}</p>
-          <p>Memory: {{product.configure.memory}}</p>
-          <p>Display: {{product.configure.display}}</p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button mat-raised-button color="primary" (click)="addToBasket(product)">BUY</button>
-        </mat-card-actions>
       </mat-card>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+

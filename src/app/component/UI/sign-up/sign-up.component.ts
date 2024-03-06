@@ -34,18 +34,19 @@ export class SignUpComponent implements OnInit {
     if (this.email.valid && this.password.valid && this.name.valid && this.radio) {
       let user_str = localStorage.getItem('userinfo');
       if (user_str !== null) {
-        console.log('Пользователь зарегистрирован');
-        return;
+        alert('User already registered!');
+      } else {
+        let user_obj = {
+          name: this.name.value,
+          password: this.password.value,
+          email: this.email.value,
+        };
+        let user_str_new: string = JSON.stringify(user_obj);
+        this.signUpSuccess = true;
+        localStorage.setItem('userinfo', user_str_new);
+        this.router.navigate(['base']);
+        alert('New user added!');
       }
-
-      let user_obj = {
-        name: this.name.value,
-        password: this.password.value,
-        email: this.email.value,
-      };
-      let user_str_new: string = JSON.stringify(user_obj);
-      localStorage.setItem('userinfo', user_str_new);
-      this.signUpSuccess = true;
     }
   }
 }

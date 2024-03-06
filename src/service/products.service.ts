@@ -2,6 +2,7 @@ import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {IProducts} from '../models/products';
 import {Subscription} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,8 @@ export class ProductsService implements OnInit {
   basket: IProducts[];
   basketSubscription: Subscription;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -66,7 +68,6 @@ export class ProductsService implements OnInit {
   }
 
 // other
-
   toggleOpened() {
     this.opened = !this.opened;
   }

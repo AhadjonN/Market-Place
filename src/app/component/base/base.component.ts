@@ -14,7 +14,8 @@ import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 export class BaseComponent implements OnInit {
 
   search: string = '';
-
+  currentIndex: number = 0;
+  images: string[] = ['assets/banner5.jpg', 'assets/banner1.jpg', 'assets/banner4.jpg'];
   constructor(public ProductService: ProductsService,
               public dialog: MatDialog,
   ) {
@@ -112,7 +113,6 @@ export class BaseComponent implements OnInit {
     });
   }
 
-
   searchProducts() {
     if (this.search.trim() === '') {
       this.getProducts();
@@ -127,6 +127,24 @@ export class BaseComponent implements OnInit {
     this.ProductService.getProducts().subscribe(products => {
       this.products = products;
     });
+  }
+
+//Banner
+
+  prevSlide() {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+    } else {
+      this.currentIndex = this.images.length - 1;
+    }
+  }
+
+  nextSlide() {
+    if (this.currentIndex < this.images.length - 1) {
+      this.currentIndex++;
+    } else {
+      this.currentIndex = 0;
+    }
   }
 
   ngOnDestroy() {

@@ -42,7 +42,9 @@
           <p>Price: {{ ProductService.allTotalPrice|currency }}</p>
         </mat-card-content>
         <mat-card-actions style="margin-top: 10px">
-          <button mat-raised-button color="primary">Order</button>
+          <button mat-raised-button color="primary"
+          (click)="Order()"
+          >Order</button>
         </mat-card-actions>
       </mat-card>
     </div>
