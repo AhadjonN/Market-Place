@@ -6,13 +6,14 @@
         <mat-card-header>
           <mat-card-title-group>
             <div class="group-info">
-              <div class="header-infor">
+              <div class="header-information">
                 <mat-card-title>{{ product.title }}</mat-card-title>
               </div>
               <div class="linear"></div>
               <div class="header-info">
                 <img mat-card-xl-image src=" {{product.image}}" alt="ERROR">
                 <div class="product-info">
+                  <div class="header-information">Characteristics</div>
                   <div class="info-item">
                     <div class="info-label">Year:</div>
                     <div class="info-value">{{ product.year }}</div>
@@ -29,10 +30,11 @@
                     <div class="info-label">Display:</div>
                     <div class="info-value">{{ product.configure.display }}</div>
                   </div>
+                  <div class="header-information">Description</div>
+                  <div class="info-description">{{ product.title }}</div>
                 </div>
 
                 <div class="mini__content">
-
                   <mat-card class="mini__example-card">
                     <mat-card-content>
                       <div class="info-item">
@@ -43,7 +45,12 @@
                       </div>
                     </mat-card-content>
                     <mat-card-actions style="margin-top: 10px">
-                      <button mat-button mat-raised-button color="primary" (click)="addToBasket(product)">BUY</button>
+                      <button class="info-btn" mat-flat-button color="primary" (click)="addToBasket(product)">
+                        <div class="iconFlex">
+                          <span class="material-symbols-outlined">shopping_cart</span>
+                          Buy Now
+                        </div>
+                      </button>
                     </mat-card-actions>
                   </mat-card>
                 </div>

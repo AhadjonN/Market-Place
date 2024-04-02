@@ -19,10 +19,7 @@ mat-sidenav {
 }
 
 .content {
-  display: flex;
-  padding: 10px;
   margin: 0 auto;
-  flex-wrap: wrap;
   max-width: 1380px;
 }
 
@@ -32,17 +29,11 @@ mat-sidenav {
   width: 1380px;
 }
 
-@media(max-width: 500px) {
-  .content {
-    justify-content: center;
-  }
-}
-
 // card
 .example-card {
   margin: 5px;
   cursor: pointer;
-  max-width: 220px;
+  max-width: 255px;
   border-radius: 12px;
   transition: transform 0.3s ease-in-out;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -74,6 +65,8 @@ mat-sidenav {
 
 //search
 .example-full-width {
+  margin-right: 25px;
+  margin-left: 30px;
   width: 800px;
 }
 
@@ -98,6 +91,14 @@ mat-sidenav {
   overflow: hidden;
   margin: 15px auto;
   border-radius: 12px;
+}
+
+@media (max-width: 750px) {
+  .main-banner {
+    max-height: 140px;
+    overflow: hidden;
+
+  }
 }
 
 .slides {
@@ -149,4 +150,46 @@ img {
 .next {
   margin-right: 20px;
   right: 0;
+}
+
+@media (max-width: 767px) {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .example-card {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .example-card {
+    width: calc(50% - 20px);
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .example-card {
+    width: calc(33.33% - 20px);
+    margin-bottom: 40px;
+   }
 }

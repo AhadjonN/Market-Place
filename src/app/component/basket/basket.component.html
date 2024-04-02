@@ -2,22 +2,25 @@
   <div class="content">
     <div class="border_content">
       <h1 style="margin: 0px 0px 26px 20px;"><strong> BASKET</strong></h1>
+
       <mat-card class="example-card" *ngFor="let item of basket">
-        <img mat-card-image src="{{item.image}}" alt="ERROR">
-        <mat-card-content>
-          <br>
-          <mat-card-title>{{ item.title }}</mat-card-title>
-          <p> Year: {{ item.year }}</p>
-          <p>Price: {{ item.price| currency }}</p>
-        </mat-card-content>
+        <div class="content_flex">
+          <img mat-card-image src="{{item.image}}" alt="ERROR">
+          <mat-card-content>
+            <br>
+            <mat-card-title>{{ item.title }}</mat-card-title>
+            <div style="margin-top: 10px" class="info-item">
+              <div class="info-label">Price:</div>
+              <div class="info-value">{{ item.price| currency }}</div>
+            </div>
+          </mat-card-content>
+        </div>
         <mat-card-actions>
-          <button class="btnQuantity" mat-raised-button color="primary"
-                  (click)="minusItem(item)">-
-          </button>
-          <span class="quantity">{{ item.quantity }}</span>
-          <button class="btnQuantity" mat-raised-button color="primary"
-                  (click)="plusItem(item)">+
-          </button>
+          <div class="btn-icon">
+            <button class="btnQnty" mat-raised-button color="primary" (click)="minusItem(item)">-</button>
+            <span class="quantity">{{ item.quantity }}</span>
+            <button class="btnQnty" mat-raised-button color="primary" (click)="plusItem(item)">+</button>
+          </div>
         </mat-card-actions>
       </mat-card>
       <div class="basket_empty">
@@ -38,13 +41,21 @@
     <div class="border_content">
       <mat-card class="mini__example-card">
         <mat-card-content>
-          <p>Quantity: {{ ProductService.allTotalQuantity }}</p>
-          <p>Price: {{ ProductService.allTotalPrice|currency }}</p>
+          <div class="info-mini_item">
+            <div class="info-label">Products</div>
+            <div style="color: #808080;" class="info-value">{{ ProductService.allTotalQuantity }}, pc.</div>
+          </div>
+          <div class="info-mini_item">
+            <div style="color: #000000de;font-weight: bold" class="info-label">Totals</div>
+            <div style="font-weight: bold" class="info-value ">{{ ProductService.allTotalPrice|currency }}</div>
+          </div>
+
         </mat-card-content>
         <mat-card-actions style="margin-top: 10px">
-          <button mat-raised-button color="primary"
-          (click)="Order()"
-          >Order</button>
+          <button class="basket_btn" mat-raised-button color="primary"
+                  (click)="Order()"
+          >Order
+          </button>
         </mat-card-actions>
       </mat-card>
     </div>

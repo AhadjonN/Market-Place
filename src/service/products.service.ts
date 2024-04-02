@@ -10,8 +10,8 @@ import {Router} from '@angular/router';
 export class ProductsService implements OnInit {
 
   opened = false;
-  allTotalPrice: number;
-  allTotalQuantity: number;
+  allTotalPrice: number = 0;
+  allTotalQuantity: number = 0;
 
   url: string = 'http://localhost:3000/product';
   urlBasket: string = 'http://localhost:3000/basket';
@@ -72,8 +72,7 @@ export class ProductsService implements OnInit {
     this.opened = !this.opened;
   }
 
-  allTotalPriceAndQuantity(product: IProducts, basket: IProducts[]): void {
-    product.totalPrice = product.price * product.quantity;
+  allTotalPriceAndQuantity(basket: IProducts[]): void {
     this.allTotalPrice = basket.reduce((acc, product) => acc + product.totalPrice, 0);
     this.allTotalQuantity = basket.reduce((acc, product) => acc + product.quantity, 0);
   }

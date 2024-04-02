@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {IProducts} from '../../../models/products';
 import {Subscription} from 'rxjs';
 import {ProductsService} from '../../../service/products.service';
@@ -15,8 +15,10 @@ export class BaseComponent implements OnInit {
 
   search: string = '';
   currentIndex: number = 0;
-  images: string[] = ['assets/banner5.jpg', 'assets/banner1.jpg', 'assets/banner4.jpg'];
-  constructor(public ProductService: ProductsService,
+  images: string[] = ['assets/banner5.jpg', 'assets/banner4.jpg'];
+
+  constructor(private cdr: ChangeDetectorRef,
+              public ProductService: ProductsService,
               public dialog: MatDialog,
   ) {
   }
@@ -46,7 +48,9 @@ export class BaseComponent implements OnInit {
 
   addToBasket(product: IProducts) {
     product.quantity = 1;
-    this.ProductService.allTotalPriceAndQuantity(product, this.basket);
+    product.totalPrice = product.price * product.quantity;
+    localStorage.setItem('basket', JSON.stringify(this.basket));
+    this.ProductService.allTotalPriceAndQuantity(this.basket);
     let findItem;
     if (this.basket.length > 0) {
       findItem = this.basket.find((item) => item.id === product.id);
