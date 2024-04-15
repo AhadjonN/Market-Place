@@ -24,6 +24,7 @@ import {InformationComponent} from './component/information/information.componen
 import {DialogBoxComponent} from './component/dialog-box/dialog-box.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
+import { FavouritesComponent } from './component/favourites/favourites.component';
 
 @NgModule({
 
@@ -37,6 +38,7 @@ import {MatMenuModule} from '@angular/material/menu';
     BasketComponent,
     InformationComponent,
     DialogBoxComponent,
+    FavouritesComponent,
   ],
   imports: [
     BrowserModule,

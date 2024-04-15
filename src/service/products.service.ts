@@ -15,9 +15,13 @@ export class ProductsService implements OnInit {
 
   url: string = 'http://localhost:3000/product';
   urlBasket: string = 'http://localhost:3000/basket';
+  urlFavorite: string = 'http://localhost:3000/favorite';
 
   basket: IProducts[];
   basketSubscription: Subscription;
+
+  favorite: IProducts[];
+  favoriteSubscription: Subscription;
 
   constructor(private http: HttpClient,
               private router: Router) {
@@ -26,6 +30,9 @@ export class ProductsService implements OnInit {
   ngOnInit(): void {
     this.basketSubscription = this.getProductFromBasket().subscribe((data) => {
       this.basket = data;
+    });
+    this.favoriteSubscription = this.getProductFromFavorite().subscribe((data) => {
+      this.favorite = data;
     });
   }
 
@@ -65,6 +72,23 @@ export class ProductsService implements OnInit {
 
   updateProductToBasket(product: IProducts) {
     return this.http.put<IProducts>(`${this.urlBasket}/${product.id}`, product);
+  }
+
+  // favorite products
+  getProductFromFavorite() {
+    return this.http.get<IProducts[]>(this.urlFavorite);
+  }
+
+  postProductFavorite(product: IProducts) {
+    return this.http.post<IProducts>(this.urlFavorite, product);
+  }
+
+  updateProductToFavorite(product: IProducts) {
+    return this.http.put<IProducts>(`${this.urlFavorite}/${product.id}`, product);
+  }
+
+  deleteProductToFavorite(id: number) {
+    return this.http.delete<any>(`${this.urlFavorite}/${id}`);
   }
 
 // other

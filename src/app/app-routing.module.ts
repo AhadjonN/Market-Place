@@ -6,12 +6,15 @@ import {BaseComponent} from './component/base/base.component';
 import {BasketComponent} from './component/basket/basket.component';
 import {InformationComponent} from './component/information/information.component';
 import {ProductResolver} from '../service/product.resolver';
+import {FavouritesComponent} from './component/favourites/favourites.component';
 
 const routes: Routes = [
   {path: '', component: BaseComponent},
   {path: 'sign-in', component: SignInComponent},
   {path: 'sign-up', component: SignUpComponent},
   {path: 'basket', component: BasketComponent},
+  {path: 'favorite', component: FavouritesComponent},
+  {path: 'favorite/informations/:id', component: InformationComponent, resolve: {data: ProductResolver}},
   {path: 'information/:id', component: InformationComponent, resolve: {data: ProductResolver}},
 
   {path: '**', redirectTo: '', component: BaseComponent}

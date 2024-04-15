@@ -29,6 +29,10 @@ export class BaseComponent implements OnInit {
   basket: IProducts[];
   basketSubscription: Subscription;
 
+  favorite: IProducts[];
+  favoriteSubscription: Subscription;
+
+  isFavorite: boolean;
   canEdit: boolean = false;
 
   ngOnInit() {
@@ -39,6 +43,10 @@ export class BaseComponent implements OnInit {
 
     this.basketSubscription = this.ProductService.getProductFromBasket().subscribe((data) => {
       this.basket = data;
+    });
+
+    this.favoriteSubscription = this.ProductService.getProductFromFavorite().subscribe((data) => {
+      this.favorite = data;
     });
 
     this.getProducts();
@@ -73,7 +81,30 @@ export class BaseComponent implements OnInit {
     });
   }
 
-  //Dialog
+  addToFavorite(product: IProducts) {
+    this.isFavorite = this.favorite.some(item => item.id === product.id);
+
+    if (!this.isFavorite) {
+      this.postToFavorite(product);
+    } else {
+      this.removeFromFavorite(product);
+    }
+  }
+
+  //Favorite service
+
+  postToFavorite(product: IProducts) {
+    this.ProductService.postProductFavorite(product).subscribe((data) =>
+      this.favorite.push(data)
+    );
+  }
+
+  removeFromFavorite(product: IProducts) {
+    this.ProductService.deleteProductToFavorite(product.id).subscribe(() => {
+      let idx = this.favorite.findIndex((data) => data.id === product.id);
+      this.favorite.splice(idx, 1);
+    });
+  }
 
   openDialog(product?: IProducts): void {
     let dialogConfig = new MatDialogConfig();

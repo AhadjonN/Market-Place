@@ -8,14 +8,20 @@
     </div>
     <span class="example-spacer"></span>
     <div class="toolbar no-select" *ngIf="isSignInPage()">
-      <div class="iconBase" routerLink="basket">
-        <span style="font-size: 27px;" class="material-symbols-outlined">shopping_cart</span>
-        <h4>Basket</h4>
-      </div>
       <div class="iconBase" routerLink="sign-in">
-        <span style="font-size: 27px" class="material-symbols-outlined" >logout</span>
+        <span style="font-size: 25px" class="material-symbols-outlined">logout</span>
         <h4>Login</h4>
       </div>
+      <div class="iconBase" routerLink="basket">
+        <span style="font-size: 25px;" class="material-symbols-outlined">shopping_cart</span>
+        <h4>Basket</h4>
+      </div>
+      <div class="iconBase" routerLink="favorite">
+        <span style="font-size: 25px;" class="material-symbols-outlined">favorite</span>
+        <h4>Favorites</h4>
+      </div>
+
+
     </div>
   </div>
 </mat-toolbar>
