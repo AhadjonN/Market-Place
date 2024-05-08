@@ -29,7 +29,7 @@
 
 .example-card {
   display: flex;
-  width: 1095px;
+  width: 1200px;
   height: 650px;
   align-items: center;
   justify-content: space-between;
@@ -54,8 +54,8 @@
 }
 
 .mat-mdc-card-xl-image {
-  width: 250px;
-  height: 250px;
+  width: 500px;
+  height: 500px;
   border-radius: 10px;
   object-fit: cover;
   margin-bottom: 10px;
@@ -69,7 +69,6 @@
 }
 
 .info-item {
-  justify-content: space-between;
   display: flex;
 }
 

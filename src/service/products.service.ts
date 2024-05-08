@@ -2,7 +2,7 @@ import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {IProducts} from '../models/products';
 import {Subscription} from 'rxjs';
-import {Router} from '@angular/router';
+import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,9 @@ import {Router} from '@angular/router';
 export class ProductsService implements OnInit {
 
   opened = false;
-  allTotalPrice: number = 0;
-  allTotalQuantity: number = 0;
+  allTotalPrice = 0
+  allTotalQuantity = 0;
+  imageUrl = ' '
 
   url: string = 'http://localhost:3000/product';
   urlBasket: string = 'http://localhost:3000/basket';
@@ -24,7 +25,7 @@ export class ProductsService implements OnInit {
   favoriteSubscription: Subscription;
 
   constructor(private http: HttpClient,
-              private router: Router) {
+             public sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
@@ -83,10 +84,6 @@ export class ProductsService implements OnInit {
     return this.http.post<IProducts>(this.urlFavorite, product);
   }
 
-  updateProductToFavorite(product: IProducts) {
-    return this.http.put<IProducts>(`${this.urlFavorite}/${product.id}`, product);
-  }
-
   deleteProductToFavorite(id: number) {
     return this.http.delete<any>(`${this.urlFavorite}/${id}`);
   }
@@ -94,11 +91,18 @@ export class ProductsService implements OnInit {
 // other
   toggleOpened() {
     this.opened = !this.opened;
+    if (this.opened) {
+      document.body.style.overflow = 'hidden';
+      this.opened = true;
+    } else {
+      document.body.style.overflow = 'auto';
+    }
   }
 
   allTotalPriceAndQuantity(basket: IProducts[]): void {
     this.allTotalPrice = basket.reduce((acc, product) => acc + product.totalPrice, 0);
     this.allTotalQuantity = basket.reduce((acc, product) => acc + product.quantity, 0);
   }
+
 
 }

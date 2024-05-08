@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -17,17 +16,17 @@ import {HeaderComponent} from './component/UI/header/header.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {FooterComponent} from './component/UI/footer/footer.component';
 import {BaseComponent} from './component/base/base.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {BasketComponent} from './component/basket/basket.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {InformationComponent} from './component/information/information.component';
 import {DialogBoxComponent} from './component/dialog-box/dialog-box.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
-import { FavouritesComponent } from './component/favourites/favourites.component';
+import {FavouritesComponent} from './component/favourites/favourites.component';
+import {ProductsService} from "../service/products.service";
 
 @NgModule({
-
   declarations: [
     AppComponent,
     SignInComponent,
@@ -51,14 +50,14 @@ import { FavouritesComponent } from './component/favourites/favourites.component
     MatCardModule,
     MatToolbarModule,
     MatCheckboxModule,
-    MatSidenavModule,
     MatListModule,
     HttpClientModule,
     MatDialogModule,
     FormsModule,
     MatMenuModule,
+    MatSidenavModule,
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

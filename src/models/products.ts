@@ -6,7 +6,7 @@ export interface IProducts {
   totalPrice: number,
   allTotalPrice: number,
   allTotalQuantity: number,
-  image?: string,
+  image?: any,
   quantity: number,
   configure: IProductsConfig,
 }
@@ -14,5 +14,8 @@ export interface IProducts {
 export interface IProductsConfig {
   chip: string,
   memory: string,
+  memoryRam: string,
+  videoCard: string,
+  oc: string,
   display: string
 }

@@ -2,8 +2,8 @@ import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {IProducts} from '../../../models/products';
 import {Subscription} from 'rxjs';
 import {ProductsService} from '../../../service/products.service';
-import {DialogBoxComponent} from '../dialog-box/dialog-box.component';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {DialogBoxComponent} from "../dialog-box/dialog-box.component";
 
 
 @Component({
@@ -12,7 +12,6 @@ import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
   styleUrls: ['./base.component.scss']
 })
 export class BaseComponent implements OnInit {
-
   search: string = '';
   currentIndex: number = 0;
   images: string[] = ['assets/banner5.jpg', 'assets/banner4.jpg'];
@@ -54,17 +53,20 @@ export class BaseComponent implements OnInit {
 
   //BasketComponent
 
-  addToBasket(product: IProducts) {
+  addToBasket(product: IProducts): void {
     product.quantity = 1;
-    product.totalPrice = product.price * product.quantity;
-    localStorage.setItem('basket', JSON.stringify(this.basket));
+
+    const existingProduct = this.basket.find((item) => item.id === product.id);
+    if (existingProduct) {
+      this.updateToBasket(existingProduct);
+    } else {
+      product.totalPrice = product.price * product.quantity;
+      this.basket.push(product);
+      this.postToBasket(product);
+    }
     this.ProductService.allTotalPriceAndQuantity(this.basket);
-    let findItem;
-    if (this.basket.length > 0) {
-      findItem = this.basket.find((item) => item.id === product.id);
-      if (findItem) this.updateToBasket(findItem);
-      else this.postToBasket(product);
-    } else this.postToBasket(product);
+    localStorage.setItem('basket', JSON.stringify(this.basket));
+
   }
 
   //Basket service
@@ -76,9 +78,16 @@ export class BaseComponent implements OnInit {
   }
 
   updateToBasket(product: IProducts) {
-    product.quantity += 1;
-    this.ProductService.updateProductToBasket(product).subscribe((data) => {
-    });
+    product.quantity++;
+    product.totalPrice = product.price * product.quantity;
+
+    this.ProductService.updateProductToBasket(product).subscribe((updatedProduct) => {
+      const basketIndex = this.basket.findIndex((item) => item.id === product.id);
+      if (basketIndex !== -1) {
+        this.basket[basketIndex] = updatedProduct;
+      }
+     });
+
   }
 
   addToFavorite(product: IProducts) {

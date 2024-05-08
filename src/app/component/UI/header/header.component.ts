@@ -2,8 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ProductsService} from '../../../../service/products.service';
 import {IProducts} from '../../../../models/products';
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {Subscription} from 'rxjs';
+import {DialogBoxComponent} from '../../dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-header',
@@ -32,14 +33,11 @@ export class HeaderComponent implements OnInit {
     this.getProducts();
   }
 
-// Product service
-
   getProducts() {
     this.ProductService.getProducts().subscribe(products => {
       this.products = products;
     });
   }
-
 
   isSignInPage(): boolean {
     return this.router.url === '/';

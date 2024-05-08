@@ -18,7 +18,7 @@ export class InformationComponent implements OnInit {
   basketSubscription: Subscription;
 
   constructor(private route: ActivatedRoute,
-              public ProductService: ProductsService,) {
+              public ProductService: ProductsService) {
 
   }
 

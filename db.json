@@ -1,298 +1,126 @@
 {
   "product": [
     {
-      "id": 1,
-      "title": "15.6\" Ноутбук Haier U1520EM, Intel Celeron N4020 (1.1 ГГц), RAM 4 ГБ, eMMC 64 ГБ, Intel HD Graphics 600, Windows 10 Home, (JM02VSE09RU)",
-      "year": "2023",
-      "price": "2020",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "m2",
-        "memory": "500",
-        "display": "flex"
-      }
-    },
-    {
-      "id": 2,
-      "title": "15.6\" Ноутбук Haier U1520EM, Intel Celeron N4020 (1.1 ГГц), RAM 4 ГБ, eMMC 64 ГБ, Intel HD Graphics 600, Windows 10 Home, (JM02VSE09RU)",
-      "year": "12",
-      "price": "1",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "12",
-        "memory": "12",
-        "display": "123"
-      }
-    },
-    {
-      "id": 3,
-      "title": "15.6\" Ноутбук Haier U1520EM, Intel Celeron N4020 (1.1 ГГц), RAM 4 ГБ, eMMC 64 ГБ, Intel HD Graphics 600, Windows 10 Home,122222222222222222",
-      "year": "1231",
-      "price": "1231",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "3123",
-        "memory": "23123",
-        "display": "3123"
-      }
-    },
-    {
-      "id": 4,
-      "title": "Ноутбук ASUS E406NA-BV014T Intel Celeron Dual Core N3550/4Gb/128Gb eMMC SSD/14.0\" HD/Intel HD Graphics 500/Cam/Wi-Fi/Win10/Star Grey11",
-      "year": "123",
-      "price": "23123",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "1231",
-        "memory": "12312",
-        "display": "123"
-      }
-    },
-    {
-      "id": 5,
-      "title": "qer qwer123 4123 4i1[2p34io [p123u 412o34u 12p3o4i u1234opi12u34o12u34",
-      "year": "q123",
-      "price": "123123",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "13",
-        "memory": "123123",
-        "display": "123"
-      }
-    },
-    {
-      "id": 6,
-      "title": "1",
-      "year": "1",
-      "price": "1",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "1",
-        "memory": "1",
-        "display": "1"
-      }
-    },
-    {
       "id": 7,
-      "title": "123",
-      "year": "23",
-      "price": "123123",
-      "image": "assets/mac.jpg",
+      "title": "123123123123123123",
+      "year": "3123",
+      "price": "1",
+      "image": "https://pixelshop.tj/storage/2024/02/asus1_1-300x300.webp",
       "configure": {
-        "chip": "231",
-        "memory": "123123",
-        "display": "23123"
+        "chip": "123",
+        "memory": "1231",
+        "memoryRam": "23",
+        "oc": "123123123123",
+        "videoCard": "123",
+        "display": "231"
       }
     },
     {
       "id": 8,
-      "title": "231222",
-      "year": "123",
-      "price": "23",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "12312",
-        "memory": "312312",
-        "display": "123"
-      }
-    },
-    {
-      "id": 9,
-      "title": "3123123",
-      "year": "123",
-      "price": "231",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "2312",
-        "memory": "123",
-        "display": "312"
-      }
-    },
-    {
-      "id": 10,
-      "title": "123123",
-      "year": "2312",
-      "price": "123",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "12312",
-        "memory": "12",
-        "display": "123"
-      }
-    },
-    {
-      "id": 11,
-      "title": "12313",
-      "year": "123",
-      "price": "123",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "31",
-        "memory": "3123",
-        "display": "123"
-      }
-    },
-    {
-      "id": 12,
-      "title": "2",
+      "title": "1232",
       "year": "2",
-      "price": "2",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "2",
-        "memory": "2",
-        "display": "2"
-      }
-    },
-    {
-      "id": 13,
-      "title": "123123",
-      "year": "1231",
-      "price": "12313",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "23123",
-        "memory": "3123",
-        "display": "3123"
-      }
-    }
-  ],
-  "basket": [
-    {
-      "id": 4,
-      "title": "Ноутбук ASUS E406NA-BV014T Intel Celeron Dual Core N3550/4Gb/128Gb eMMC SSD/14.0\" HD/Intel HD Graphics 500/Cam/Wi-Fi/Win10/Star Grey11",
-      "year": "123",
-      "price": "23123",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "1231",
-        "memory": "12312",
-        "display": "123"
-      },
-      "quantity": 2,
-      "allTotalPrice": 23123
-    }
-  ],
-  "favorite": [
-    {
-      "id": 1,
-      "title": "15.6\" Ноутбук Haier U1520EM, Intel Celeron N4020 (1.1 ГГц), RAM 4 ГБ, eMMC 64 ГБ, Intel HD Graphics 600, Windows 10 Home, (JM02VSE09RU)",
-      "year": "2023",
-      "price": "2020",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "m2",
-        "memory": "500",
-        "display": "flex"
-      }
-    },
-    {
-      "id": 2,
-      "title": "15.6\" Ноутбук Haier U1520EM, Intel Celeron N4020 (1.1 ГГц), RAM 4 ГБ, eMMC 64 ГБ, Intel HD Graphics 600, Windows 10 Home, (JM02VSE09RU)",
-      "year": "12",
       "price": "1",
-      "image": "assets/mac.jpg",
+      "image": "https://pixelshop.tj/storage/2024/02/hp1_1-1.webp",
       "configure": {
-        "chip": "12",
-        "memory": "12",
+        "chip": "123",
+        "memory": "123",
+        "memoryRam": "221",
+        "oc": "123",
+        "videoCard": "31",
         "display": "123"
       }
     },
     {
-      "id": 3,
-      "title": "15.6\" Ноутбук Haier U1520EM, Intel Celeron N4020 (1.1 ГГц), RAM 4 ГБ, eMMC 64 ГБ, Intel HD Graphics 600, Windows 10 Home,122222222222222222",
-      "year": "1231",
-      "price": "1231",
-      "image": "assets/mac.jpg",
+      "id": 9,
+      "title": "aaa",
+      "year": "3123",
+      "price": "1",
+      "image": "https://pixelshop.tj/storage/2024/02/acer1_30.webp",
       "configure": {
-        "chip": "3123",
-        "memory": "23123",
-        "display": "3123"
+        "chip": "123",
+        "memory": "123",
+        "memoryRam": "123",
+        "oc": "123",
+        "videoCard": "123",
+        "display": "123"
       }
     },
     {
-      "id": 4,
-      "title": "Ноутбук ASUS E406NA-BV014T Intel Celeron Dual Core N3550/4Gb/128Gb eMMC SSD/14.0\" HD/Intel HD Graphics 500/Cam/Wi-Fi/Win10/Star Grey11",
-      "year": "123",
-      "price": "23123",
-      "image": "assets/mac.jpg",
+      "id": 10,
+      "title": "qwe",
+      "year": "2023",
+      "price": "2",
+      "image": "https://pixelshop.tj/storage/2024/02/product2_3.webp",
       "configure": {
-        "chip": "1231",
+        "chip": "e",
         "memory": "12312",
-        "display": "123"
+        "memoryRam": "13",
+        "oc": "123",
+        "videoCard": "123",
+        "display": "qwe"
       }
     },
     {
-      "id": 5,
-      "title": "qer qwer123 4123 4i1[2p34io [p123u 412o34u 12p3o4i u1234opi12u34o12u34",
-      "year": "q123",
-      "price": "123123",
-      "image": "assets/mac.jpg",
+      "id": 11,
+      "title": " Intel Core i5-1335U",
+      "year": "2020",
+      "price": "2",
+      "image": "https://pixelshop.tj/storage/2024/02/hp1_01.webp",
       "configure": {
-        "chip": "13",
-        "memory": "123123",
+        "chip": "Intel Core i5-1335U",
+        "memory": "512gb SSD",
+        "memoryRam": "8gb DDR4",
+        "oc": "Windows 11 Home",
+        "videoCard": "Intel Iris",
+        "display": "15.6 дюймов, FHD"
+      }
+    },
+    {
+      "id": 12,
+      "title": "qwe",
+      "year": "123",
+      "price": "2",
+      "image": "https://pixelshop.tj/storage/2024/02/hp1_01.webp",
+      "configure": {
+        "chip": "123",
+        "memory": "123",
+        "memoryRam": "123",
+        "oc": "123",
+        "videoCard": "123",
         "display": "123"
       }
     },
     {
       "id": 13,
-      "title": "123123",
-      "year": "1231",
-      "price": "12313",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "23123",
-        "memory": "3123",
-        "display": "3123"
-      }
-    },
-    {
-      "id": 9,
-      "title": "3123123",
+      "title": "23",
       "year": "123",
-      "price": "231",
-      "image": "assets/mac.jpg",
+      "price": "123",
+      "image": "https://pixelshop.tj/storage/2024/02/product1_2-300x300.webp",
       "configure": {
-        "chip": "2312",
+        "chip": "123",
         "memory": "123",
-        "display": "312"
+        "memoryRam": "123",
+        "oc": "123",
+        "videoCard": "123",
+        "display": "23"
       }
     },
     {
-      "id": 10,
-      "title": "123123",
-      "year": "2312",
-      "price": "123",
-      "image": "assets/mac.jpg",
+      "id": 14,
+      "title": "1",
+      "year": "w",
+      "price": "123123",
+      "image": "https://pixelshop.tj/storage/2024/02/hp1_01.webp",
       "configure": {
-        "chip": "12312",
-        "memory": "12",
+        "chip": "123",
+        "memory": "123",
+        "memoryRam": "123",
+        "oc": "123",
+        "videoCard": "12123",
         "display": "123"
-      }
-    },
-    {
-      "id": 11,
-      "title": "12313",
-      "year": "123",
-      "price": "123",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "31",
-        "memory": "3123",
-        "display": "123"
-      }
-    },
-    {
-      "id": 12,
-      "title": "2",
-      "year": "2",
-      "price": "2",
-      "image": "assets/mac.jpg",
-      "configure": {
-        "chip": "2",
-        "memory": "2",
-        "display": "2"
       }
     }
-  ]
+  ],
+  "basket": [],
+  "favorite": []
 }
