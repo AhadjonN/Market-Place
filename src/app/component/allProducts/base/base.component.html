@@ -1,19 +1,19 @@
-<mat-toolbar color="primary" *ngIf="canEdit">
-  <mat-toolbar-row>
-    <div class="header__container">
-      <span class="example-spacer"></span>
-      <button mat-raised-button (click)="this.openDialog()">Add to Market
-      </button>
-    </div>
-  </mat-toolbar-row>
-  <div class="example-form">
-    <mat-form-field class="example-full-width custom-form-field">
-      <mat-label>Search</mat-label>
-      <input type="text" matInput [(ngModel)]="search" (input)="searchProducts()">
-      <mat-icon color="primary">search</mat-icon>
-    </mat-form-field>
-  </div>
-</mat-toolbar>
+<!--<mat-toolbar color="primary" *ngIf="canEdit">-->
+<!--  <mat-toolbar-row>-->
+<!--    <div class="header__container">-->
+<!--      <span class="example-spacer"></span>-->
+<!--      <button mat-raised-button (click)="this.openDialog()">Add to Market-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </mat-toolbar-row>-->
+<!--  <div class="example-form">-->
+<!--    <mat-form-field class="example-full-width custom-form-field">-->
+<!--      <mat-label>Search</mat-label>-->
+<!--      <input type="text" matInput [(ngModel)]="search" (input)="searchProducts()">-->
+<!--      <mat-icon color="primary">search</mat-icon>-->
+<!--    </mat-form-field>-->
+<!--  </div>-->
+<!--</mat-toolbar>-->
 <mat-sidenav-container hasBackdrop>
   <mat-sidenav #sidenav [opened]="ProductService.opened" mode="side" disableClose>
     <p>Cool</p>
@@ -45,11 +45,11 @@ arrow_forward
     margin-top: 10px;;" class="clickable" [routerLink]="['information', product.id]">
           <img mat-card-image src="{{ product.image }}" alt="ERROR">
             </span>
-            <mat-card-content>
+        <mat-card-content>
           <p style="font-size: 17px;  margin-top: 1px;">{{ product.title }}</p>
           <p style="color: #004d40;margin-top: 1px">Price: {{ product.price | currency }}</p>
         </mat-card-content>
-         <mat-card-actions>
+        <mat-card-actions>
           <button style="width: 100%; border-radius: 12px" mat-flat-button color="primary"
                   (click)="addToBasket(product)">
             <div class="iconFlex">

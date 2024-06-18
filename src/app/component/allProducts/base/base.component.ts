@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IProducts} from '../../../models/products';
 import {Subscription} from 'rxjs';
 import {ProductsService} from '../../../service/products.service';
@@ -14,30 +14,35 @@ import {DialogBoxComponent} from "../dialog-box/dialog-box.component";
 export class BaseComponent implements OnInit {
   search: string = '';
   currentIndex: number = 0;
-  images: string[] = ['assets/banner5.jpg', 'assets/banner4.jpg'];
+  images: string[] = ['assets/banner5.jpg', 'assets/banner4.jpg', 'assets/banner5.jpg'];
 
-  constructor(private cdr: ChangeDetectorRef,
-              public ProductService: ProductsService,
+  constructor(public ProductService: ProductsService,
               public dialog: MatDialog,
   ) {
   }
 
+
   products: IProducts[];
-  productsSubscription: Subscription;
-
   basket: IProducts[];
-  basketSubscription: Subscription;
-
   favorite: IProducts[];
-  favoriteSubscription: Subscription;
 
   isFavorite: boolean;
   canEdit: boolean = false;
 
+  private productsSubscription: Subscription;
+  private basketSubscription: Subscription;
+  private favoriteSubscription: Subscription;
+  private searchSubscription: Subscription;
+
   ngOnInit() {
     this.canEdit = true;
-    this.productsSubscription = this.ProductService.getProducts().subscribe((data) => {
+    this.productsSubscription = this.ProductService.products$.subscribe((data) => {
       this.products = data;
+    });
+
+    this.searchSubscription = this.ProductService.search$.subscribe((search) => {
+      this.search = search;
+      this.searchProducts();
     });
 
     this.basketSubscription = this.ProductService.getProductFromBasket().subscribe((data) => {
@@ -54,40 +59,37 @@ export class BaseComponent implements OnInit {
   //BasketComponent
 
   addToBasket(product: IProducts): void {
-    product.quantity = 1;
-
-    const existingProduct = this.basket.find((item) => item.id === product.id);
-    if (existingProduct) {
-      this.updateToBasket(existingProduct);
+    const findItem = this.basket.find((item) => item.id === product.id);
+    if (findItem) {
+      this.updateToBasket(findItem);
     } else {
-      product.totalPrice = product.price * product.quantity;
-      this.basket.push(product);
-      this.postToBasket(product);
+      product.quantity = 1
+      product.totalPrice = product.price * product.quantity
+      this.postToBasket(product)
     }
-    this.ProductService.allTotalPriceAndQuantity(this.basket);
-    localStorage.setItem('basket', JSON.stringify(this.basket));
-
+    this.updateLocalStorageAndTotal()
   }
 
   //Basket service
 
   postToBasket(product: IProducts) {
-    this.ProductService.postProductBasket(product).subscribe((data) =>
+    this.ProductService.postProductBasket(product).subscribe((data) => {
       this.basket.push(data)
-    );
+      this.updateLocalStorageAndTotal()
+    })
   }
 
   updateToBasket(product: IProducts) {
     product.quantity++;
-    product.totalPrice = product.price * product.quantity;
+    product.totalPrice = product.price * product.quantity
+    this.ProductService.updateProductToBasket(product).subscribe(() => {
+      this.updateLocalStorageAndTotal()
+    });
+  }
 
-    this.ProductService.updateProductToBasket(product).subscribe((updatedProduct) => {
-      const basketIndex = this.basket.findIndex((item) => item.id === product.id);
-      if (basketIndex !== -1) {
-        this.basket[basketIndex] = updatedProduct;
-      }
-     });
-
+  updateLocalStorageAndTotal() {
+    this.ProductService.allTotalPriceAndQuantity(this.basket);
+    localStorage.setItem('basket', JSON.stringify(this.basket));
   }
 
   addToFavorite(product: IProducts) {
@@ -168,8 +170,8 @@ export class BaseComponent implements OnInit {
   }
 
   getProducts() {
-    this.ProductService.getProducts().subscribe(products => {
-      this.products = products;
+    this.ProductService.getProducts().subscribe((products) => {
+      this.ProductService.updateProducts(products);
     });
   }
 
@@ -191,8 +193,13 @@ export class BaseComponent implements OnInit {
     }
   }
 
+
+  // ngOnDestroy
+
   ngOnDestroy() {
     if (this.productsSubscription) this.productsSubscription.unsubscribe();
     if (this.basketSubscription) this.basketSubscription.unsubscribe();
+    if (this.favoriteSubscription) this.favoriteSubscription.unsubscribe();
+    if (this.searchSubscription) this.searchSubscription.unsubscribe();
   }
 }
