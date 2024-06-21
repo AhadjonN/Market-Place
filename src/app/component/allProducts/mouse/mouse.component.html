@@ -1,0 +1,35 @@
+<mat-sidenav-container hasBackdrop>
+  <mat-sidenav #sidenav [opened]="ProductService.opened" mode="side" disableClose>
+    <p routerLink="/base">Laptop</p>
+    <p routerLink="/mouse">Mouse</p>
+    <p routerLink="keyboard">Keyboard</p>
+  </mat-sidenav>
+  <div class="container_content mat-elevation-z4">
+    <div class="content">
+      <mat-card class="example-card" *ngFor="let product of mouseProducts">
+        <button class="material-symbols-outlined btn_favorite"
+                (click)="addToFavorite(product)">
+          <mat-icon fontIcon="favorite_border"></mat-icon>
+        </button>
+        <span style="margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;;" class="clickable" [routerLink]="['/mouse/information/', product.id]">
+          <img mat-card-image src="{{ product.image }}" alt="ERROR">
+            </span>
+        <mat-card-content>
+          <p style="font-size: 17px;  margin-top: 1px;">{{ product.title }}</p>
+          <p style="color: #004d40;margin-top: 1px">Price: {{ product.price | currency }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button style="width: 100%; border-radius: 12px" mat-flat-button color="primary"
+                  (click)="addToBasket(product)">
+            <div class="iconFlex">
+              <span class="material-symbols-outlined">shopping_cart</span>
+              Buy Now
+            </div>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</mat-sidenav-container>
