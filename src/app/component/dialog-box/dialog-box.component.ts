@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, Sanitizer, SecurityContext} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ProductsService} from "../../../service/products.service";
@@ -12,13 +12,10 @@ import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
 export class DialogBoxComponent implements OnInit {
 
   constructor(
-    public sanitizer: DomSanitizer,
-    public ProductService: ProductsService,
     public dialogRef: MatDialogRef<DialogBoxComponent>,
     @Inject(MAT_DIALOG_DATA)
     public data: any,
   ) {
-    this.sanitizedImageUrl = sanitizer.bypassSecurityTrustUrl(this.ProductService.imageUrl)
     if (this.data) this.isNew = false;
   }
 

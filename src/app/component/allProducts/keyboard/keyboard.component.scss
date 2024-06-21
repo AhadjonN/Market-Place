@@ -1,0 +1,152 @@
+
+.mat-drawer-container {
+  background-color: #ffffff;
+}
+
+//container
+.container_content {
+  min-height: calc(100vh - 160px);
+  margin: 16px;
+  border-radius: 10px;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 1380px;
+}
+
+.header__container {
+  margin: 0 auto;
+  display: flex;
+  width: 1380px;
+}
+
+// card
+.example-card {
+  margin: 5px;
+  cursor: pointer;
+  max-width: 240px;
+  box-shadow: none;
+}
+
+.cart-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.mdc-card__actions {
+  flex-direction: column;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+button {
+  background-color: transparent;
+}
+
+
+.btn_favorite {
+  cursor: pointer;
+  opacity: 0;
+  border: none;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  color: #004d40;
+  background-position: center;
+  background-size: 23px 21px;
+  position: absolute;
+  top: -5px;
+  right: -2px;
+  z-index: 4;
+}
+
+
+.clickable button {
+  pointer-events: none;
+}
+
+.mat-mdc-card-content:last-child {
+  padding-bottom: 0;
+}
+
+.iconFlex {
+  gap: 8px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: initial;
+}
+
+.example-card:hover {
+
+  .btn_favorite {
+    opacity: 1;
+  }
+
+  border-radius: 12px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 2px 6px 2px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .example-card {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .example-card {
+    width: calc(50% - 20px);
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .example-card {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 1010px) {
+  mat-sidenav {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1010px) {
+  mat-sidenav {
+    width: 317px;
+  }
+}

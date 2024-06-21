@@ -46,36 +46,6 @@
       }
     },
     {
-      "id": 10,
-      "title": "qwe",
-      "year": "2023",
-      "price": "2",
-      "image": "https://pixelshop.tj/storage/2024/02/product2_3.webp",
-      "configure": {
-        "chip": "e",
-        "memory": "12312",
-        "memoryRam": "13",
-        "oc": "123",
-        "videoCard": "123",
-        "display": "qwe"
-      }
-    },
-    {
-      "id": 11,
-      "title": " Intel Core i5-1335U",
-      "year": "2020",
-      "price": "2",
-      "image": "https://pixelshop.tj/storage/2024/02/hp1_01.webp",
-      "configure": {
-        "chip": "Intel Core i5-1335U",
-        "memory": "512gb SSD",
-        "memoryRam": "8gb DDR4",
-        "oc": "Windows 11 Home",
-        "videoCard": "Intel Iris",
-        "display": "15.6 дюймов, FHD"
-      }
-    },
-    {
       "id": 12,
       "title": "qwe",
       "year": "123",
@@ -91,11 +61,11 @@
       }
     },
     {
-      "id": 13,
-      "title": "23",
-      "year": "123",
+      "id": 15,
+      "title": "qwwqe",
+      "year": "3",
       "price": "123",
-      "image": "https://pixelshop.tj/storage/2024/02/product1_2-300x300.webp",
+      "image": "https://pixelshop.tj/storage/2024/02/product2_3.webp",
       "configure": {
         "chip": "123",
         "memory": "123",
@@ -106,21 +76,242 @@
       }
     },
     {
-      "id": 14,
-      "title": "1",
-      "year": "w",
-      "price": "123123",
-      "image": "https://pixelshop.tj/storage/2024/02/hp1_01.webp",
+      "id": 16,
+      "title": "23414",
+      "year": "123",
+      "price": "123",
+      "image": "https://pixelshop.tj/storage/2024/02/product2_3.webp",
       "configure": {
         "chip": "123",
         "memory": "123",
         "memoryRam": "123",
         "oc": "123",
-        "videoCard": "12123",
+        "videoCard": "123",
         "display": "123"
+      }
+    },
+    {
+      "id": 17,
+      "title": "123",
+      "year": "123",
+      "price": "123",
+      "image": "https://pixelshop.tj/storage/2024/02/product2_3.webp",
+      "configure": {
+        "chip": "123",
+        "memory": "123",
+        "memoryRam": "123",
+        "oc": "123",
+        "videoCard": "123",
+        "display": "123"
+      }
+    },
+    {
+      "id": 18,
+      "title": "23",
+      "year": "123",
+      "price": "123",
+      "image": "https://pixelshop.tj/storage/2024/02/product1_2-300x300.webp",
+      "configure": {
+        "chip": "123",
+        "memory": "123",
+        "memoryRam": "123",
+        "oc": "123",
+        "videoCard": "123",
+        "display": "123"
+      }
+    },
+    {
+      "id": 19,
+      "title": "31",
+      "year": "123",
+      "price": "123",
+      "image": "https://pixelshop.tj/storage/2024/02/product1_2-300x300.webp",
+      "configure": {
+        "chip": "123",
+        "memory": "123",
+        "memoryRam": "123",
+        "oc": "1231",
+        "videoCard": "23",
+        "display": "123"
+      }
+    },
+    {
+      "id": 20,
+      "title": "23123",
+      "year": "13",
+      "price": "123",
+      "image": "https://pixelshop.tj/storage/2024/02/product1_2-300x300.webp",
+      "configure": {
+        "chip": "123",
+        "memory": "123",
+        "memoryRam": "1231",
+        "oc": "23",
+        "videoCard": "123",
+        "display": "23"
+      }
+    }
+  ],
+  "mouse": [
+    {
+      "id": 1,
+      "title": "Gaming Mouse",
+      "price": 50,
+      "image": "https://imagnsk.ru/image/cache/webp/catalog/product-50209-600x600.webp",
+      "configureMouse": {
+        "sensitivity": "60 dpi",
+        "ConnectionType": "wired",
+        "ConnectionInterface": "Type C A",
+        "color": "black"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Wireless Mouse",
+      "price": 30,
+      "image": "https://imagnsk.ru/image/cache/webp/catalog/product-50209-600x600.webp",
+      "configureMouse": {
+        "sensitivity": "60 dpi",
+        "ConnectionType": "wired",
+        "ConnectionInterface": "Type C A",
+        "color": "black"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Gaming Mouse",
+      "price": 50,
+      "image": "https://imagnsk.ru/image/cache/webp/catalog/product-50209-600x600.webp",
+      "configureMouse": {
+        "sensitivity": "60 dpi",
+        "ConnectionType": "wired",
+        "ConnectionInterface": "Type C A",
+        "color": "black"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Wireless Mouse",
+      "price": 30,
+      "image": "https://imagnsk.ru/image/cache/webp/catalog/product-50209-600x600.webp",
+      "configureMouse": {
+        "sensitivity": "60 dpi",
+        "ConnectionType": "wired",
+        "ConnectionInterface": "Type C A",
+        "color": "black"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Wireless Mouse",
+      "price": 30,
+      "image": "https://imagnsk.ru/image/cache/webp/catalog/product-50209-600x600.webp",
+      "configureMouse": {
+        "sensitivity": "60 dpi",
+        "ConnectionType": "wired",
+        "ConnectionInterface": "Type C A",
+        "color": "black"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Cool Mouse",
+      "price": 30,
+      "image": "https://imagnsk.ru/image/cache/webp/catalog/product-50209-600x600.webp",
+      "configureMouse": {
+        "sensitivity": "60 dpi",
+        "ConnectionType": "wired",
+        "ConnectionInterface": "Type C A",
+        "color": "black"
+      }
+    }
+  ],
+  "keyboard": [
+    {
+      "id": 1,
+      "title": "Gaming Keyboard",
+      "price": 50,
+      "image": "https://pcmarket.uz/wp-content/uploads/2022/10/66cb769f630643cab2b4af3b1ee37a4e.png.1400x1120_q100_crop-fit_optimize.png",
+      "configureMouse": {
+        "TypeOfKeyboard": "membrane",
+        "ConnectionType": "USB; Wired",
+        "ConnectionInterface": "wired; usb",
+        "color": "black"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Gaming Keyboard",
+      "price": 70,
+      "image": "https://img.bloody.com/ru/uploadfile/image/20230308/20230308141102_82067.png",
+      "configureMouse": {
+        "TypeOfKeyboard": "mechanical",
+        "ConnectionType": "USB; Wired",
+        "ConnectionInterface": "wired; usb",
+        "color": "red"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Mac Keyboard",
+      "price": 100,
+      "image": "https://i-store.net/_sh/59/5948.jpg",
+      "configureMouse": {
+        "TypeOfKeyboard": "membrane",
+        "ConnectionType": "USB; Bluetooth",
+        "ConnectionInterface": "wired; usb",
+        "color": "white"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Keyboard",
+      "price": 10,
+      "image": "https://www.sven.fi/upload/iblock_photos/keyboard/kb-s230/010-photo-big.png",
+      "configureMouse": {
+        "TypeOfKeyboard": "membrane",
+        "ConnectionType": "wired",
+        "ConnectionInterface": "wired",
+        "color": "black"
       }
     }
   ],
   "basket": [],
-  "favorite": []
+  "favorite": [
+    {
+      "id": 4,
+      "title": "Keyboard",
+      "price": 10,
+      "image": "https://www.sven.fi/upload/iblock_photos/keyboard/kb-s230/010-photo-big.png",
+      "configureMouse": {
+        "TypeOfKeyboard": "membrane",
+        "ConnectionType": "wired",
+        "ConnectionInterface": "wired",
+        "color": "black"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Mac Keyboard",
+      "price": 100,
+      "image": "https://i-store.net/_sh/59/5948.jpg",
+      "configureMouse": {
+        "TypeOfKeyboard": "membrane",
+        "ConnectionType": "USB; Bluetooth",
+        "ConnectionInterface": "wired; usb",
+        "color": "white"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Gaming Keyboard",
+      "price": 70,
+      "image": "https://img.bloody.com/ru/uploadfile/image/20230308/20230308141102_82067.png",
+      "configureMouse": {
+        "TypeOfKeyboard": "mechanical",
+        "ConnectionType": "USB; Wired",
+        "ConnectionInterface": "wired; usb",
+        "color": "red"
+      }
+    }
+  ]
 }

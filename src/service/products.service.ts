@@ -1,8 +1,7 @@
 import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {IProducts} from '../models/products';
-import {Subscription} from 'rxjs';
-import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
+import {BehaviorSubject, forkJoin, map, Subscription} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +11,10 @@ export class ProductsService implements OnInit {
   opened = false;
   allTotalPrice = 0
   allTotalQuantity = 0;
-  imageUrl = ' '
 
   url: string = 'http://localhost:3000/product';
+  urlMouse: string = 'http://localhost:3000/mouse';
+  urlKeyboard: string = 'http://localhost:3000/keyboard';
   urlBasket: string = 'http://localhost:3000/basket';
   urlFavorite: string = 'http://localhost:3000/favorite';
 
@@ -24,8 +24,13 @@ export class ProductsService implements OnInit {
   favorite: IProducts[];
   favoriteSubscription: Subscription;
 
-  constructor(private http: HttpClient,
-             public sanitizer: DomSanitizer) {
+  private searchSubject = new BehaviorSubject<string>('');
+  private productsSubject = new BehaviorSubject<IProducts[]>([]);
+
+  search$ = this.searchSubject.asObservable();
+  products$ = this.productsSubject.asObservable();
+
+  constructor(private http: HttpClient) {
   }
 
   ngOnInit(): void {
@@ -35,6 +40,16 @@ export class ProductsService implements OnInit {
     this.favoriteSubscription = this.getProductFromFavorite().subscribe((data) => {
       this.favorite = data;
     });
+  }
+
+  getAllProducts() {
+    return forkJoin({
+      laptops: this.http.get<IProducts[]>(this.url),
+      mice: this.http.get<IProducts[]>(this.urlMouse),
+      keyboard: this.http.get<IProducts[]>(this.urlKeyboard)
+    }).pipe(
+      map(result => [...result.mice, ...result.laptops, ...result.keyboard])
+    );
   }
 
 // base products
@@ -58,6 +73,15 @@ export class ProductsService implements OnInit {
     return this.http.put<IProducts>(`${this.url}/${product.id}`, product);
   }
 
+  //mouse
+  getMouseProducts() {
+    return this.http.get<IProducts[]>(this.urlMouse);
+  }
+
+  getProductMouse(id: number) {
+    return this.http.get<IProducts>(`${this.urlMouse}/${id}`);
+  }
+
   // basket products
   getProductFromBasket() {
     return this.http.get<IProducts[]>(this.urlBasket);
@@ -73,6 +97,15 @@ export class ProductsService implements OnInit {
 
   updateProductToBasket(product: IProducts) {
     return this.http.put<IProducts>(`${this.urlBasket}/${product.id}`, product);
+  }
+
+  //Keyboard
+  getKeyboardProducts() {
+    return this.http.get<IProducts[]>(this.urlKeyboard);
+  }
+
+  getProductKeyboard(id: number) {
+    return this.http.get<IProducts>(`${this.urlKeyboard}/${id}`);
   }
 
   // favorite products
@@ -99,10 +132,16 @@ export class ProductsService implements OnInit {
     }
   }
 
+  updateSearch(search: string) {
+    this.searchSubject.next(search);
+  }
+
+  updateProducts(products: IProducts[]) {
+    this.productsSubject.next(products);
+  }
+
   allTotalPriceAndQuantity(basket: IProducts[]): void {
     this.allTotalPrice = basket.reduce((acc, product) => acc + product.totalPrice, 0);
     this.allTotalQuantity = basket.reduce((acc, product) => acc + product.quantity, 0);
   }
-
-
 }

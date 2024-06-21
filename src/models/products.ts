@@ -9,6 +9,8 @@ export interface IProducts {
   image?: any,
   quantity: number,
   configure: IProductsConfig,
+  configureMouse: IProductsMouseConfig,
+  configureKeyboard: IProductsKeyboardConfig
 }
 
 export interface IProductsConfig {
@@ -19,3 +21,19 @@ export interface IProductsConfig {
   oc: string,
   display: string
 }
+
+export interface IProductsMouseConfig {
+  sensitivity: string,
+  ConnectionType: string,
+  ConnectionInterface: string,
+  color: string
+}
+
+export interface IProductsKeyboardConfig {
+  TypeOfKeyboard: string,
+  ConnectionInterface: string,
+  GameModel: string
+  KeyboardLayout: string,
+  color: string
+}
+

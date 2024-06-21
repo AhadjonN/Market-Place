@@ -15,7 +15,7 @@ import {SignUpComponent} from './component/UI/sign-up/sign-up.component';
 import {HeaderComponent} from './component/UI/header/header.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {FooterComponent} from './component/UI/footer/footer.component';
-import {BaseComponent} from './component/base/base.component';
+import {BaseComponent} from './component/allProducts/base/base.component';
 import {MatListModule} from '@angular/material/list';
 import {BasketComponent} from './component/basket/basket.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -25,6 +25,12 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
 import {FavouritesComponent} from './component/favourites/favourites.component';
 import {ProductsService} from "../service/products.service";
+import { BaseProductComponent } from './component/base-product/base-product.component';
+import { MouseComponent } from './component/allProducts/mouse/mouse.component';
+import {RouterLink} from "@angular/router";
+import {MatBadgeModule} from "@angular/material/badge";
+import { KeyboardComponent } from './component/allProducts/keyboard/keyboard.component';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +44,10 @@ import {ProductsService} from "../service/products.service";
     InformationComponent,
     DialogBoxComponent,
     FavouritesComponent,
+    BaseProductComponent,
+    MouseComponent,
+    KeyboardComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -56,6 +66,8 @@ import {ProductsService} from "../service/products.service";
     FormsModule,
     MatMenuModule,
     MatSidenavModule,
+    RouterLink,
+    MatBadgeModule,
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]

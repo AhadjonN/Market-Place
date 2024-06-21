@@ -1,19 +1,23 @@
 <mat-toolbar color="primary">
   <div class="header__container">
     <div class="toolbar no-select">
-      <button mat-icon-button (click)="ProductService.toggleOpened()" *ngIf="router.url==='/'">
+      <button mat-icon-button (click)="ProductService.toggleOpened()">
         <mat-icon>{{ ProductService.opened ? 'close' : 'menu' }}</mat-icon>
       </button>
-      <b routerLink="base" style="cursor: pointer; font-size: 22px">Market Place</b>
+      <b routerLink="/" style="cursor: pointer; font-size: 22px">Market Place</b>
     </div>
     <span class="example-spacer"></span>
-    <div class="toolbar no-select" *ngIf="isSignInPage()">
+    <div class="toolbar no-select">
       <div class="iconBase" routerLink="sign-in">
         <span style="font-size: 25px" class="material-symbols-outlined">logout</span>
         <h4>Login</h4>
       </div>
+
+
       <div class="iconBase" routerLink="basket">
-        <span style="font-size: 25px;" class="material-symbols-outlined">shopping_cart</span>
+        <span matBadge="{{ProductService.allTotalQuantity}}" style="font-size: 25px;"
+              class="material-symbols-outlined">shopping_cart
+        </span>
         <h4>Basket</h4>
       </div>
       <div class="iconBase" routerLink="favorite">
@@ -23,4 +27,15 @@
     </div>
   </div>
 </mat-toolbar>
+<mat-toolbar color="primary" *ngIf="canEdit">
+  <mat-toolbar-row>
 
+  </mat-toolbar-row>
+  <div class="example-form">
+    <mat-form-field class="example-full-width custom-form-field">
+      <mat-label>Search</mat-label>
+      <input type="text" matInput [(ngModel)]="search" (input)="this.searchProducts()">
+      <mat-icon color="primary">search</mat-icon>
+    </mat-form-field>
+  </div>
+</mat-toolbar>

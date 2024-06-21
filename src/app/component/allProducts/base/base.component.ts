@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {IProducts} from '../../../models/products';
+import {IProducts} from '../../../../models/products';
 import {Subscription} from 'rxjs';
-import {ProductsService} from '../../../service/products.service';
+import {ProductsService} from '../../../../service/products.service';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
-import {DialogBoxComponent} from "../dialog-box/dialog-box.component";
+import {DialogBoxComponent} from "../../dialog-box/dialog-box.component";
 
 
 @Component({
@@ -13,8 +13,6 @@ import {DialogBoxComponent} from "../dialog-box/dialog-box.component";
 })
 export class BaseComponent implements OnInit {
   search: string = '';
-  currentIndex: number = 0;
-  images: string[] = ['assets/banner5.jpg', 'assets/banner4.jpg', 'assets/banner5.jpg'];
 
   constructor(public ProductService: ProductsService,
               public dialog: MatDialog,
@@ -117,47 +115,47 @@ export class BaseComponent implements OnInit {
     });
   }
 
-  openDialog(product?: IProducts): void {
-    let dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '500px';
-    dialogConfig.disableClose = true;
-    dialogConfig.data = product;
-    const dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe((data) => {
-
-      if (data) {
-        if (data && data.id) {
-          this.editItem(data);
-        } else
-          this.postData(data);
-      }
-    });
-  }
-
-// Product service
-
-  postData(data: IProducts) {
-    this.ProductService.postProduct(data).subscribe((data) => this.products.push(data));
-  }
-
-  deleteItem(id: number) {
-    this.ProductService.deleteProduct(id).subscribe(() => this.products.find((item) => {
-      if (id === item.id) {
-        let idx = this.products.findIndex((data) => data.id === id);
-        this.products.splice(idx, 1);
-      }
-    }));
-  }
-
-  editItem(product: IProducts) {
-    this.ProductService.updateProduct(product).subscribe((data) => {
-      this.products = this.products.map((product) => {
-        if (product.id === data.id) return data;
-        else return product;
-      });
-    });
-  }
+//   openDialog(product?: IProducts): void {
+//     let dialogConfig = new MatDialogConfig();
+//     dialogConfig.width = '500px';
+//     dialogConfig.disableClose = true;
+//     dialogConfig.data = product;
+//     const dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
+//
+//     dialogRef.afterClosed().subscribe((data) => {
+//
+//       if (data) {
+//         if (data && data.id) {
+//           this.editItem(data);
+//         } else
+//           this.postData(data);
+//       }
+//     });
+//   }
+//
+// // Product service
+//
+//   postData(data: IProducts) {
+//     this.ProductService.postProduct(data).subscribe((data) => this.products.push(data));
+//   }
+//
+//   deleteItem(id: number) {
+//     this.ProductService.deleteProduct(id).subscribe(() => this.products.find((item) => {
+//       if (id === item.id) {
+//         let idx = this.products.findIndex((data) => data.id === id);
+//         this.products.splice(idx, 1);
+//       }
+//     }));
+//   }
+//
+//   editItem(product: IProducts) {
+//     this.ProductService.updateProduct(product).subscribe((data) => {
+//       this.products = this.products.map((product) => {
+//         if (product.id === data.id) return data;
+//         else return product;
+//       });
+//     });
+//   }
 
   searchProducts() {
     if (this.search.trim() === '') {
@@ -174,25 +172,6 @@ export class BaseComponent implements OnInit {
       this.ProductService.updateProducts(products);
     });
   }
-
-//Banner
-
-  prevSlide() {
-    if (this.currentIndex > 0) {
-      this.currentIndex--;
-    } else {
-      this.currentIndex = this.images.length - 1;
-    }
-  }
-
-  nextSlide() {
-    if (this.currentIndex < this.images.length - 1) {
-      this.currentIndex++;
-    } else {
-      this.currentIndex = 0;
-    }
-  }
-
 
   // ngOnDestroy
 

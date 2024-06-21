@@ -144,6 +144,8 @@
   }
 
   .container_content {
+    justify-content: space-between;
+    min-height: calc(100vh - 112px);
     flex-direction: column;
   }
 }

@@ -1,4 +1,9 @@
 <mat-sidenav-container hasBackdrop>
+  <mat-sidenav #sidenav [opened]="ProductService.opened" mode="side" disableClose>
+    <p routerLink="base">Laptop</p>
+    <p routerLink="mouse">Mouse</p>
+    <p routerLink="keyboard">Keyboard</p>
+  </mat-sidenav>
   <mat-sidenav-content>
     <div class="container_content mat-elevation-z4">
       <mat-card class="example-card">
@@ -10,37 +15,63 @@
               </div>
               <div class="linear"></div>
               <div class="header-info">
-                <img mat-card-xl-image src=" {{product.image}}" alt="ERROR">
+                <img mat-card-xl-image src="{{ product.image }}" alt="ERROR">
                 <div class="product-info">
                   <div class="header-information">Characteristics</div>
-                  <div class="info-item">
+
+                  <!-- General Product Information -->
+                  <div class="info-item" *ngIf="product.year">
                     <div class="info-label">Year:</div>
                     <div class="info-value">{{ product.year }}</div>
                   </div>
-                  <div class="info-item">
-                    <div class="info-label">Chip:</div>
-                    <div class="info-value">{{ product.configure.chip }}</div>
-                  </div>
-                  <div class="info-item">
-                    <div class="info-label">Video Card:</div>
-                    <div class="info-value">{{ product.configure.videoCard }}</div>
-                  </div>
-                  <div class="info-item">
-                    <div class="info-label">Memory:</div>
-                    <div class="info-value">{{ product.configure.memory }}</div>
-                  </div>
-                  <div class="info-item">
-                    <div class="info-label">Memory RAM:</div>
-                    <div class="info-value">{{ product.configure.memoryRam }}</div>
-                  </div>
-                  <div class="info-item">
-                    <div class="info-label">OC:</div>
-                    <div class="info-value">{{ product.configure.oc }}</div>
-                  </div>
-                  <div class="info-item">
-                    <div class="info-label">Display:</div>
-                    <div class="info-value">{{ product.configure.display }}</div>
-                  </div>
+
+                  <!-- Laptop-Specific Information -->
+                  <ng-container *ngIf="product.configure">
+                    <div class="info-item" *ngIf="product.configure.chip">
+                      <div class="info-label">Chip:</div>
+                      <div class="info-value">{{ product.configure.chip }}</div>
+                    </div>
+                    <div class="info-item" *ngIf="product.configure.videoCard">
+                      <div class="info-label">Video Card:</div>
+                      <div class="info-value">{{ product.configure.videoCard }}</div>
+                    </div>
+                    <div class="info-item" *ngIf="product.configure.memory">
+                      <div class="info-label">Memory:</div>
+                      <div class="info-value">{{ product.configure.memory }}</div>
+                    </div>
+                    <div class="info-item" *ngIf="product.configure.memoryRam">
+                      <div class="info-label">Memory RAM:</div>
+                      <div class="info-value">{{ product.configure.memoryRam }}</div>
+                    </div>
+                    <div class="info-item" *ngIf="product.configure.oc">
+                      <div class="info-label">OC:</div>
+                      <div class="info-value">{{ product.configure.oc }}</div>
+                    </div>
+                    <div class="info-item" *ngIf="product.configure.display">
+                      <div class="info-label">Display:</div>
+                      <div class="info-value">{{ product.configure.display }}</div>
+                    </div>
+                  </ng-container>
+
+                  <!-- Mouse-Specific Information -->
+                  <ng-container *ngIf="product.configureMouse">
+                    <div class="info-item" *ngIf="product.configureMouse.sensitivity">
+                      <div class="info-label">Sensitivity:</div>
+                      <div class="info-value">{{ product.configureMouse.sensitivity }}</div>
+                    </div>
+                    <div class="info-item" *ngIf="product.configureMouse.ConnectionType">
+                      <div class="info-label">Connection Type:</div>
+                      <div class="info-value">{{ product.configureMouse.ConnectionType }}</div>
+                    </div>
+                    <div class="info-item" *ngIf="product.configureMouse.ConnectionInterface">
+                      <div class="info-label">Connection Interface:</div>
+                      <div class="info-value">{{ product.configureMouse.ConnectionInterface }}</div>
+                    </div>
+                    <div class="info-item" *ngIf="product.configureMouse.color">
+                      <div class="info-label">Color:</div>
+                      <div class="info-value">{{ product.configureMouse.color }}</div>
+                    </div>
+                  </ng-container>
                 </div>
 
                 <div class="mini__content">
@@ -72,4 +103,3 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-

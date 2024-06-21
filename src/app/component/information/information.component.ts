@@ -32,25 +32,37 @@ export class InformationComponent implements OnInit {
     });
   }
 
-  addToBasket(product: IProducts) {
-    product.quantity = 1;
-    let findItem;
-    if (this.basket.length > 0) {
-      findItem = this.basket.find((item) => item.id === product.id);
-      if (findItem) this.updateToBasket(findItem);
-      else this.postToBasket(product);
-    } else this.postToBasket(product);
+  addToBasket(product: IProducts): void {
+    const findItem = this.basket.find((item) => item.id === product.id);
+    if (findItem) {
+      this.updateToBasket(findItem);
+    } else {
+      product.quantity = 1
+      product.totalPrice = product.price * product.quantity
+      this.postToBasket(product)
+    }
+    this.updateLocalStorageAndTotal()
   }
 
+  //Basket service
+
   postToBasket(product: IProducts) {
-    this.ProductService.postProductBasket(product).subscribe((data) =>
+    this.ProductService.postProductBasket(product).subscribe((data) => {
       this.basket.push(data)
-    );
+      this.updateLocalStorageAndTotal()
+    })
   }
 
   updateToBasket(product: IProducts) {
-    product.quantity += 1;
-    this.ProductService.updateProductToBasket(product).subscribe((data) => {
+    product.quantity++;
+    product.totalPrice = product.price * product.quantity
+    this.ProductService.updateProductToBasket(product).subscribe(() => {
+      this.updateLocalStorageAndTotal()
     });
+  }
+
+  updateLocalStorageAndTotal() {
+    this.ProductService.allTotalPriceAndQuantity(this.basket);
+    localStorage.setItem('basket', JSON.stringify(this.basket));
   }
 }
